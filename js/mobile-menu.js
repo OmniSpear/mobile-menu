@@ -1,15 +1,17 @@
-var menuTop = document.querySelector('.mobileMenuTop'),
+var menuTop = document.querySelector('.openTop .mobileMenu'),
     offsetHeight = (menuTop === null)?null:menuTop.offsetHeight;
 
 $('#navToggle').click(function(){
     if (menuTop === null) {return;}
     if (this.checked) {
-        $('.contentWrapperTop').css('top', offsetHeight+'px')
-        $('.navToggleTop').css('top', offsetHeight + 15 +'px')
+        $('.openTop .contentWrapper').css('top', offsetHeight+'px')
+        $('.openTop .toggleBtn').css('top', offsetHeight + 15 +'px')
+        $('.openTop .bodyOverlay').css('top', offsetHeight+'px')
     }
     else {
-        $('.contentWrapperTop').css('top', '0')
-        $('.navToggleTop').css('top', '15' + 'px')
+        $('.openTop .contentWrapper').css('top', '0')
+        $('.openTop .toggleBtn').css('top', '15' + 'px')
+        $('.openTop .bodyOverlay').css('top', '0')
     }
 })
 
@@ -49,6 +51,7 @@ $(function() {
             if (phase=="move" && direction =="left") {
                  $(".contentWrapper").removeClass("open-sidebar");
                  $(".toggleBtn").removeClass("toggled");
+                 $(".bodyOverlay").removeClass("overlayClear");
                  return false;
             }
     }
@@ -58,6 +61,7 @@ $(function() {
             if (phase=="move" && direction =="right") {
                   $(".contentWrapper").removeClass("open-sidebar");
                   $(".toggleBtn").removeClass("toggled");
+                  $(".bodyOverlay").removeClass("overlayClear");
                   return false;
              }
     }

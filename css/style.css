@@ -10,6 +10,7 @@
     left: 0;
     z-index: 1;
     transition: left 0.2s ease-in-out;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -30,15 +31,16 @@ body {
     width: 100vw;
     height: 100vh;
     background: white;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    transition: all 0.2s ease;
 }
 
 .bodyOverlay.overlayClear {
-    display: none;
+    transition: all 0.2s ease;
 }
 
 .content {
@@ -177,6 +179,10 @@ label[for="navToggle"] .hamburger {
     transition: left 0.2s ease-in-out;
 }
 
+.openLeft .overlayClear {
+    left: 240px;
+}
+
 /* Open Right */
 .openRight label[for="navToggle"] {
     position: fixed;
@@ -204,6 +210,10 @@ label[for="navToggle"] .hamburger {
 .openRight .mobileMenu {
     left: 30%;
     transition: left 0.2s ease-in-out;
+}
+
+.openLeft .overlayClear {
+    left: -70%;
 }
 
 /* Open Top */
@@ -290,6 +300,14 @@ label[for="navToggle"] .hamburger {
 
 .openFull .mobileMenu li {
     width: 100%;
+}
+
+.openFull .bodyOverlay {
+    opacity: 1;
+}
+
+.openFull .overlayClear {
+    opacity: 0;
 }
 
 @media screen and (max-width: 768px) {
