@@ -4,13 +4,13 @@
 
 ```html
 
-```<ul class="mobileMenu" id="mobileMenu">
-	<li><a href="#">Home</a></li>
-	<li><a href="#">Portfolio</a></li>
-	<li><a href="#">About</a></li>
-	<li><a href="#">Blog</a></li>
-	<li><a href="#">Contact</a></li>
-</ul>```
+    <ul class="mobileMenu" id="mobileMenu">
+    	<li><a href="#">Home</a></li>
+    	<li><a href="#">Portfolio</a></li>
+    	<li><a href="#">About</a></li>
+    	<li><a href="#">Blog</a></li>
+    	<li><a href="#">Contact</a></li>
+    </ul>
 
     <input type="checkbox" id="navToggle" class="navToggle" />
     <label for="navToggle" class="toggleBtn" data-toggle=".toggleBtn" data-menu=".contentWrapper">
@@ -25,7 +25,6 @@
         <!--Place Site Content Here-->
     </div>
 ```
-``````
 
 ##Change Opening Direction
 
