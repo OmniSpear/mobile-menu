@@ -1,0 +1,15 @@
+{
+  "name": "mobile-menu",
+  "version": "1.0.0",
+  "description": "Omnispear Mobile Menu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmniSpear/mobile-menu.git"
+  },
+  "author": "Tyler Reed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OmniSpear/mobile-menu/issues"
+  },
+  "homepage": "https://github.com/OmniSpear/mobile-menu#readme"
+}
