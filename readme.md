@@ -1,6 +1,6 @@
 # Omnispear Mobile Menu
 
-This project was built by Omnispear[http://www.omnispear.com/].
+This project was built by [Omnispear](http://www.omnispear.com/).
 
 ## Basic Markup
 
