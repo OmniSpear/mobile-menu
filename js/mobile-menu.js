@@ -1,3 +1,4 @@
+// Menu Top Offsets
 var menuTop = document.querySelector('.openTop .mobileMenu'),
     offsetHeight = (menuTop === null)?null:menuTop.offsetHeight;
 
@@ -24,24 +25,37 @@ $(window).on('scroll', function() {
     }
 });
 
-$(document).ready(function() {
-  $("[data-toggle]").click(function() {
-    var toggle_el = $(this).data("toggle");
-    $(toggle_el).toggleClass("toggled");
-  });
+// Menu Toggles
+function toggleMenu () {
+    var container = document.querySelector('.contentWrapper'),
+        toggleBtn = document.querySelector('.toggleBtn'),
+        bodyOverlay = document.querySelector('.bodyOverlay');
+    toggleBtn.classList.toggle('toggled');
+    container.classList.toggle('open-sidebar');
+    bodyOverlay.classList.toggle('overlayClear');
+    container.removeEventListener('click', toggleMenu);
 
-  $("[data-menu]").click(function() {
-    var toggle_el = $(this).data("toggle");
-    $(".contentWrapper").toggleClass("open-sidebar");
-  });
+    if (container.classList.contains('open-sidebar')) {
+        container.addEventListener('click', toggleMenu);
+    }
+}
 
-    $("[data-menu]").click(function() {
-    var toggle_el = $(this).data("toggle");
-    $(".bodyOverlay").toggleClass("overlayClear");
-  });
-     
+// Submenus
+$('.dropdownToggle').click(function(){
+  $(".dropdown-menu").toggleClass("hidden");
 });
 
+// Close Menu on Links That Start With '#'
+$(".mobileMenu a[href^='#']").click(function() {
+    $(".toggleBtn").removeClass("toggled");
+    $(".contentWrapper").removeClass("open-sidebar");
+    $(".bodyOverlay").removeClass("overlayClear");
+    $(".dropdown-menu").toggleClass("hidden");
+});
+
+document.querySelector('.toggleBtn').addEventListener('click', toggleMenu);
+
+// Swipe Functionality
 $(function() {
   $(".openLeft .contentWrapper").swipe( { swipeStatus:leftSwipe, allowPageScroll:"vertical"} );
   $(".openRight .contentWrapper").swipe( { swipeStatus:rightSwipe, allowPageScroll:"vertical"} );

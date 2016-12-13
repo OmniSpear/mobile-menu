@@ -37,10 +37,12 @@ body {
     left: 0;
     bottom: 0;
     transition: all 0.2s ease-in-out;
+    z-index: 1;
 }
 
 .bodyOverlay.overlayClear {
     transition: all 0.2s ease-in-out;
+    z-index: -1;
 }
 
 .content {
@@ -69,13 +71,13 @@ body {
     margin-top: 0;
 }
 
-li {
+.mobileMenu li {
     width: 70%;
-    border-bottom: 1px solid #000;
     background-color: transparent;
+    z-index: 1;
 }
 
-li a {
+.mobileMenu li a {
     display: block;
     padding: 20px;
     background: transparent;
@@ -84,9 +86,10 @@ li a {
     transition: color 0.2s, background 0.5s;
     font-weight: normal;
     font-size: 14px;
+    border-bottom: 1px solid #000;
 }
 
-li a:hover {
+.mobileMenu li a:hover {
     color: #c74438;
 }
 
@@ -98,6 +101,35 @@ li a:hover {
     height: 100%;
     // background: #f3f3f3;
     z-index: 0;
+}
+
+.dropdown .dropdown-menu {
+    max-height: 400px;
+    opacity: 1;
+    transition: all 1.5s ease;
+    list-style: none;
+    color: white;
+    font-size: 12px;
+    padding-left: 0;
+    z-index: 1;
+}
+
+.dropdown .dropdown-menu.hidden {
+    max-height: 0;
+    opacity: 0;
+    transition: all .6s ease;
+    position: relative;
+    z-index: -1;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    width: 100%;
+    padding-left: 50px; 
 }
 
 /* Toggle */

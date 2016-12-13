@@ -19,7 +19,7 @@ Add CSS to project in the `<head>` section.
 
 ## Basic Markup
 
-Include this makup in the header of your site.
+Include this markup in the header of your site.
 
 ```html
     <ul class="mobileMenu" id="mobileMenu">

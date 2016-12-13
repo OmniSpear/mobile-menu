@@ -11,19 +11,26 @@
 	<div class="bodyOverlay"></div>
 	<!--mobileMenu-->
 	<ul class="mobileMenu" id="mobileMenu">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Portfolio</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Blog</a></li>
-		<li><a href="#">Contact</a></li>
+		<li><a href="">Home</a></li>
+		<li class="dropdown">
+			<a class="dropdownToggle">Portfolio</a>
+			<ul class="dropdown-menu hidden">
+				<li><a href="#jump">Sub Item</a></li>
+				<li><a href="#jump">Another Sub Item</a></li>
+				<li><a href="#jump">Last Sub Item</a></li>
+			</ul>
+		</li>
+		<li><a href="">About</a></li>
+		<li><a href="">Blog</a></li>
+		<li><a href="">Contact</a></li>
 	</ul>
 
 	<input type="checkbox" id="navToggle" class="navToggle" />
-	<label for="navToggle" class="toggleBtn" data-toggle=".toggleBtn" data-menu=".contentWrapper">
-		<div class="hamburger">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+	<label for="navToggle" class="toggleBtn mobileNavToggle" data-toggle="">
+		<div class="hamburger mobileNavToggle">
+			<span class="icon-bar mobileNavToggle"></span>
+			<span class="icon-bar mobileNavToggle"></span>
+			<span class="icon-bar mobileNavToggle"></span>
 		</div>
 	</label>
 	<!--End mobileMenu-->
@@ -35,6 +42,8 @@
 			<p>Sint, perspiciatis nemo aut, rerum excepturi deleniti modi quos nihil corporis eum, maiores soluta labore, consectetur eligendi nesciunt. Placeat, incidunt! Illum placeat eligendi, veritatis consectetur eum! Dolor obcaecati minima ab placeat voluptatem neque modi doloribus, magnam qui voluptate eaque in. Nulla expedita hic porro architecto facere officiis vitae numquam, dolor!</p>
 			<p>Perferendis quis ea incidunt ducimus nisi voluptate natus. Repellat asperiores quod rerum rem quos blanditiis enim modi, veniam voluptas a facilis! Velit cum omnis, voluptatum eum inventore! Corrupti, suscipit, neque distinctio expedita est laboriosam cum aliquid minus tempora quaerat officia possimus unde vel deleniti eaque fugit accusamus iusto dolorum natus.</p>
 		</div>
+
+		<div id="jump">&nbsp;</div>
 	</div><!--wrapper-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

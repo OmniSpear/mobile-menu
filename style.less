@@ -89,6 +89,19 @@ body {
             }
         }
     }
+
+    .dropdown {
+        .dropdown-menu {
+            height: auto;
+            opacity: 1;
+            transition: all 0.2s ease;
+
+            &.hidden {
+                height: 0;
+                opacity: 0;
+            }
+        }
+    }
 }
 
 .swipe-area {
