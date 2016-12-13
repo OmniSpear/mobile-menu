@@ -38,9 +38,11 @@ body {
     bottom: 0;
     z-index: 1;
     transition: all 0.2s ease-in-out;
+    z-index: 1;
 
     &.overlayClear {
         transition: all 0.2s ease-in-out;
+        z-index: -1;
     }
 }
 
@@ -92,13 +94,31 @@ body {
 
     .dropdown {
         .dropdown-menu {
-            height: auto;
+            max-height: 400px;
             opacity: 1;
-            transition: all 0.2s ease;
+            transition: all 1.5s ease;
+            list-style: none;
+            color: white;
+            font-size: 12px;
+            padding-left: 0;
+            z-index: 1;
 
             &.hidden {
-                height: 0;
+                max-height: 0;
                 opacity: 0;
+                transition: all .6s ease;
+                position: relative;
+                z-index: -1;
+            }
+
+            li {
+                width: 100%;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding-left: 50px; 
+                }
             }
         }
     }
