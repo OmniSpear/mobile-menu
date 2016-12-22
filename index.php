@@ -13,11 +13,18 @@
 	<ul class="mobileMenu" id="mobileMenu">
 		<li><a href="">Home</a></li>
 		<li class="dropdown">
-			<a class="dropdownToggle">Portfolio</a>
-			<ul class="dropdown-menu hidden">
-				<li><a href="#jump">Sub Item</a></li>
+			<a class="dropdownToggle">Dropdown</a>
+			<ul class="dropdown-menu">
+			    <li><a href="#jump">Sub Item</a></li>
 				<li><a href="#jump">Another Sub Item</a></li>
-				<li><a href="#jump">Last Sub Item</a></li>
+				<li class="dropdown">
+							<a class="dropdownToggle">Another Dropdown</a>
+							<ul class="dropdown-menu">
+							    <li><a href="#jump">Sub Item</a></li>
+								<li><a href="#jump">Another Sub Item</a></li>
+								<li><a href="#jump">Last Sub Item</a></li>
+							</ul>
+						</li>
 			</ul>
 		</li>
 		<li><a href="">About</a></li>

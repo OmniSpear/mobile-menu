@@ -36,7 +36,6 @@ body {
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 1;
     transition: all 0.2s ease-in-out;
     z-index: 1;
 
@@ -73,8 +72,8 @@ body {
 
     li {
         width: 70%;
-        border-bottom: 1px solid #000;
         background-color: transparent;
+        z-index: 1;
 
         a {
             display: block;
@@ -85,41 +84,15 @@ body {
             transition: color 0.2s, background 0.5s;
             font-weight: normal;
             font-size: 14px;
+            border-bottom: 1px solid #000;
 
             &:hover {
                 color: #c74438;
             }
         }
-    }
 
-    .dropdown {
-        .dropdown-menu {
-            max-height: 400px;
-            opacity: 1;
-            transition: all 1.5s ease;
-            list-style: none;
-            color: white;
-            font-size: 12px;
-            padding-left: 0;
-            z-index: 1;
-
-            &.hidden {
-                max-height: 0;
-                opacity: 0;
-                transition: all .6s ease;
-                position: relative;
-                z-index: -1;
-            }
-
-            li {
-                width: 100%;
-
-                a {
-                    display: block;
-                    width: 100%;
-                    padding-left: 50px; 
-                }
-            }
+        ul li ul li a {
+            padding-left: 100px;
         }
     }
 }
@@ -130,7 +103,29 @@ body {
     left: 0;
     top: 0;
     height: 100%;
+    // background: #f3f3f3;
     z-index: 0;
+}
+
+.dropdown {
+    .dropdown-menu {
+        list-style: none;
+        color: white;
+        font-size: 12px;
+        padding-left: 0;
+        z-index: 1;
+        display: none;
+
+        li {
+            width: 100%;
+
+            a {
+                display: block;
+                width: 100%;
+                padding-left: 50px; 
+            }
+        }
+    }
 }
 
 /* Toggle */
@@ -173,24 +168,18 @@ label[for="navToggle"] .hamburger {
     }
 }
 
-.navToggle + label.toggled {
-    .hamburger {
-        .icon-bar {
-            &:nth-of-type(1) {
-                top: 8px;
-                transform: rotate(45deg);
-            }
+.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
+    top: 8px;
+    transform: rotate(45deg);
+}
 
-            &:nth-of-type(2) {
-                background-color: transparent;
-            }
+.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
+    background-color: transparent;
+}
 
-            &:nth-of-type(3) {
-                top: -6px;
-                transform: rotate(-45deg);
-            }
-        }
-    }
+.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
+    top: -6px;
+    transform: rotate(-45deg);
 }
 
 /* Open Left */
@@ -203,23 +192,19 @@ label[for="navToggle"] .hamburger {
         z-index: 2;
     }
 
-    .navToggle + label {
+    .navToggle + label, .openLeft .contentWrapper {
         transition: all 0.2s ease-in-out;
-
-        &.toggled {
-            left: 255px;
-            transition: left 0.2s ease-in-out;
-        }
     }
 
-    .contentWrapper {
-        transition: all 0.2s ease-in-out;
+    .navToggle + label.toggled {
+        left: 255px;
+        transition: left 0.2s ease-in-out;
+    }
 
-        &.open-sidebar {
-            left: 240px;
-            box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-            transition: left 0.2s ease-in-out;
-        }
+    .contentWrapper.open-sidebar {
+        left: 240px;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        transition: left 0.2s ease-in-out;
     }
 
     .overlayClear {
@@ -237,23 +222,19 @@ label[for="navToggle"] .hamburger {
         z-index: 2;
     }
 
-    .navToggle + label {
+    .navToggle + label, .openRight .contentWrapper {
         transition: all 0.2s ease-in-out;
-
-        &.toggled {
-            right: 82%;
-            transition: right 0.2s ease-in-out;
-        }
     }
 
-    .contentWrapper {
-        transition: all 0.2s ease-in-out;
+    .navToggle + label.toggled {
+        right: 82%;
+        transition: right 0.2s ease-in-out;
+    }
 
-        &.open-sidebar {
-            left: -70%;
-            box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-            transition: left 0.2s ease-in-out;
-        }
+    .contentWrapper.open-sidebar {
+        left: -70%;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        transition: left 0.2s ease-in-out;
     }
 
     .mobileMenu {
@@ -294,6 +275,7 @@ label[for="navToggle"] .hamburger {
 
     .navToggle:checked ~ .contentWrapper {
       transition: all 0.2s ease-in-out;
+      // top: 30%;
       position: absolute;
     }
 
@@ -356,10 +338,10 @@ label[for="navToggle"] .hamburger {
 
     .bodyOverlay {
         opacity: 1;
+    }
 
-        &.overlayClear {
-            opacity: 0;
-        }
+    .overlayClear {
+        opacity: 0;
     }
 }
 

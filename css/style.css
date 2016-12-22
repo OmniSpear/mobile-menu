@@ -89,6 +89,10 @@ body {
     border-bottom: 1px solid #000;
 }
 
+.mobileMenu li ul li ul li a {
+    padding-left: 100px;
+}
+
 .mobileMenu li a:hover {
     color: #c74438;
 }
@@ -104,22 +108,12 @@ body {
 }
 
 .dropdown .dropdown-menu {
-    max-height: 400px;
-    opacity: 1;
-    transition: all 1.5s ease;
     list-style: none;
     color: white;
     font-size: 12px;
     padding-left: 0;
     z-index: 1;
-}
-
-.dropdown .dropdown-menu.hidden {
-    max-height: 0;
-    opacity: 0;
-    transition: all .6s ease;
-    position: relative;
-    z-index: -1;
+    display: none;
 }
 
 .dropdown-menu li {
@@ -154,6 +148,8 @@ label[for="navToggle"] .hamburger {
     width: 28px;
     height: 3px;
     border-radius: 1px;
+    position: relative;
+    transition: all 0.4s;
 }
 
 .hamburger .icon-bar:not(:last-child) {
@@ -166,11 +162,6 @@ label[for="navToggle"] .hamburger {
 
 .hamburger .icon-bar:nth-of-type(3) {
     top: 2px;
-}
-
-.hamburger .icon-bar {
-    position: relative;
-    transition: all 0.4s;
 }
 
 .navToggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
@@ -244,7 +235,7 @@ label[for="navToggle"] .hamburger {
     transition: left 0.2s ease-in-out;
 }
 
-.openLeft .overlayClear {
+.openRight .overlayClear {
     left: -70%;
 }
 
