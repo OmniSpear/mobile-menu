@@ -107,7 +107,7 @@ body {
     z-index: 0;
 }
 
-.dropdown .dropdown-menu {
+.dropdown .dropdownMenu {
     list-style: none;
     color: white;
     font-size: 12px;
@@ -116,11 +116,11 @@ body {
     display: none;
 }
 
-.dropdown-menu li {
+.dropdownMenu li {
     width: 100%;
 }
 
-.dropdown-menu li a {
+.dropdownMenu li a {
     display: block;
     width: 100%;
     padding-left: 50px; 
