@@ -63,30 +63,32 @@ document.querySelector('.toggleBtn').addEventListener('click', toggleMenu);
 
 // Swipe Functionality
 $(function() {
-  $(".openLeft .contentWrapper").swipe( { swipeStatus:leftSwipe, allowPageScroll:"vertical"} );
-  $(".openRight .contentWrapper").swipe( { swipeStatus:rightSwipe, allowPageScroll:"vertical"} );
+    if (document.createEvent('TouchEvent')) {
+      $(".openLeft .contentWrapper").swipe( { swipeStatus:leftSwipe, allowPageScroll:"vertical"} );
+      $(".openRight .contentWrapper").swipe( { swipeStatus:rightSwipe, allowPageScroll:"vertical"} );
+    }
 
     function leftSwipe(event, phase, direction, distance, duration, fingers)
         {
-            if ($(".contentWrapper").hasClass("open-sidebar")) {
-                if (phase=="move" && direction =="left") {
-                     $(".contentWrapper").removeClass("open-sidebar");
-                     $(".toggleBtn").removeClass("toggled");
-                     $(".bodyOverlay").removeClass("overlayClear");
-                     return false;
-                }
+        if ($(this).hasClass("open-sidebar")) {
+            if (phase=="move" && direction =="left") {
+                 $(".contentWrapper").removeClass("open-sidebar");
+                 $(".toggleBtn").removeClass("toggled");
+                 $(".bodyOverlay").removeClass("overlayClear");
+                 return false;
             }
+        }
     }
 
     function rightSwipe(event, phase, direction, distance, duration, fingers)
         {
-            if ($(".contentWrapper").hasClass("open-sidebar")) {
-                if (phase=="move" && direction =="right") {
-                      $(".contentWrapper").removeClass("open-sidebar");
-                      $(".toggleBtn").removeClass("toggled");
-                      $(".bodyOverlay").removeClass("overlayClear");
-                      return false;
-                }
+        if ($(this).hasClass("open-sidebar")) {
+            if (phase=="move" && direction =="right") {
+                  $(".contentWrapper").removeClass("open-sidebar");
+                  $(".toggleBtn").removeClass("toggled");
+                  $(".bodyOverlay").removeClass("overlayClear");
+                  return false;
             }
+        }
     }
 });
