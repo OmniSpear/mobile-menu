@@ -19,12 +19,19 @@ Add CSS to project in the `<head>` section.
 
 ## Basic Markup
 
-Include this markup in the header of your site.
+Include this markup in the header of your site. This is the basic content for the Menu, including a dropdown, and the hamburger button. Be sure that all of your site content that you want to be pushed when the menu opens is included inside the `.contentWrapper` div.
 
 ```html
     <ul class="mobileMenu" id="mobileMenu">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Portfolio</a></li>
+        <li class="dropdown">
+            <a class="dropdownToggle">Dropdown</a>
+            <ul class="dropdownMenu">
+                <li><a href="#">Sub Item</a></li>
+                <li><a href="#">Another Sub Item</a></li>
+                <li><a href="#">Last Sub Item</a></li>
+            </ul>
+        </li>
         <li><a href="#">About</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Contact</a></li>
