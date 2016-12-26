@@ -26,6 +26,13 @@ $(window).on('scroll', function() {
 });
 
 // Menu Toggles
+function closeMenu () {
+    $(".toggleBtn").removeClass("toggled");
+    $(".contentWrapper").removeClass("open-sidebar");
+    $(".bodyOverlay").removeClass("overlayClear");
+    document.querySelector('.contentWrapper').removeEventListener('click', toggleMenu);
+}
+
 function toggleMenu () {
     var container = document.querySelector('.contentWrapper'),
         toggleBtn = document.querySelector('.toggleBtn'),
@@ -53,13 +60,18 @@ $(".dropdownToggle").click(function () {
 
 // Close Menu on Links That Start With '#'
 $(".mobileMenu a[href^='#']").click(function() {
-    $(".toggleBtn").removeClass("toggled");
-    $(".contentWrapper").removeClass("open-sidebar");
-    $(".bodyOverlay").removeClass("overlayClear");
-    $(".dropdown-menu").toggleClass("hidden");
+    closeMenu();
 });
 
 document.querySelector('.toggleBtn').addEventListener('click', toggleMenu);
+
+// Close Menu on Window Resize
+$(window).on('resize', function(){
+      var win = $(this);
+      if (win.width() >= 769) {
+        closeMenu();
+      }
+});
 
 // Swipe Functionality
 $(function() {
@@ -72,9 +84,7 @@ $(function() {
         {
         if ($(this).hasClass("open-sidebar")) {
             if (phase=="move" && direction =="left") {
-                 $(".contentWrapper").removeClass("open-sidebar");
-                 $(".toggleBtn").removeClass("toggled");
-                 $(".bodyOverlay").removeClass("overlayClear");
+                 closeMenu();
                  return false;
             }
         }
@@ -84,9 +94,7 @@ $(function() {
         {
         if ($(this).hasClass("open-sidebar")) {
             if (phase=="move" && direction =="right") {
-                  $(".contentWrapper").removeClass("open-sidebar");
-                  $(".toggleBtn").removeClass("toggled");
-                  $(".bodyOverlay").removeClass("overlayClear");
+                  closeMenu();
                   return false;
             }
         }
