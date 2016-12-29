@@ -21,7 +21,7 @@ $('#navToggle').click(function(){
         $('.openTop .toggleBtn').css('top', '15' + 'px')
         $('.openTop .bodyOverlay').css('top', '0')
     }
-})
+});
 
 $(window).on('scroll', function() {
     var y_scroll_pos = window.pageYOffset;
@@ -70,7 +70,7 @@ $(".mobileMenu a[href^='#']").click(function() {
     closeMenu();
 });
 
-document.querySelector('.toggleBtn').addEventListener('click', toggleMenu);
+$('.toggleBtn').click(toggleMenu);
 
 // Close Menu on Window Resize
 $(window).on('resize', function(){
