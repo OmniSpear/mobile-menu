@@ -1,3 +1,10 @@
+// Settings
+
+window.mobileMenu = {
+  'resizeTrigger': 769
+};
+
+
 // Menu Top Offsets
 var menuTop = document.querySelector('.openTop .mobileMenu'),
     offsetHeight = (menuTop === null)?null:menuTop.offsetHeight;
@@ -68,7 +75,7 @@ document.querySelector('.toggleBtn').addEventListener('click', toggleMenu);
 // Close Menu on Window Resize
 $(window).on('resize', function(){
       var win = $(this);
-      if (win.width() >= 769) {
+      if (win.width() >= mobileMenu.resizeTrigger) {
         closeMenu();
       }
 });
