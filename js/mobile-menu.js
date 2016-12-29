@@ -1,7 +1,7 @@
 // Settings
 
 window.mobileMenu = {
-  'resizeTrigger': 769
+  'resizeTrigger': 768
 };
 
 
