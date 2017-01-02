@@ -1,5 +1,7 @@
-/* contentWrapper Needs */
-.contentWrapper {
+/* ==========================================================================
+   Body/Wrapper/Content
+   ========================================================================== */
+.content-wrapper {
     min-height: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -20,6 +22,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -27,7 +30,7 @@ body {
     overflow-x: hidden;
 }
 
-.bodyOverlay {
+.body-overlay {
     width: 100vw;
     height: 100vh;
     background: white;
@@ -39,7 +42,7 @@ body {
     transition: all 0.2s ease-in-out;
     z-index: 1;
 
-    &.overlayClear {
+    &.overlay-clear {
         transition: all 0.2s ease-in-out;
         z-index: -1;
     }
@@ -49,12 +52,14 @@ body {
     padding: 60px 40px;
 }
 
-/* Mobile Menu */
-.mobileMenu, .navToggle, label[for="navToggle"] {
+/* ==========================================================================
+   Mobile Menu
+   ========================================================================== */
+.omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
     display: none;
 }
 
-.mobileMenu {
+.omni-mobile-menu {
     width: 100%;
     height: 100%;
 
@@ -90,10 +95,6 @@ body {
                 color: #c74438;
             }
         }
-
-        ul li ul li a {
-            padding-left: 100px;
-        }
     }
 }
 
@@ -103,12 +104,11 @@ body {
     left: 0;
     top: 0;
     height: 100%;
-    // background: #f3f3f3;
     z-index: 0;
 }
 
 .dropdown {
-    .dropdownMenu {
+    .dropdown-menu {
         list-style: none;
         color: white;
         font-size: 12px;
@@ -124,18 +124,27 @@ body {
                 width: 100%;
                 padding-left: 50px; 
             }
+
+            ul {
+                li {
+                    a {
+                        padding-left: 90px;
+                    }
+                }
+            }
         }
     }
 }
 
-/* Toggle */
-.navToggle {
+/* Toggle
+   ========================================================================== */
+.nav-toggle {
     /* Hides Checkbox */
     position: absolute;
     clip: rect(0, 0, 0, 0);
 }
 
-label[for="navToggle"] .hamburger {
+label[for="nav-toggle"] .hamburger {
     cursor: pointer;
     padding: 9px 10px 11px;
     margin-top: 8px;
@@ -168,23 +177,25 @@ label[for="navToggle"] .hamburger {
     }
 }
 
-.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
     top: 8px;
     transform: rotate(45deg);
 }
 
-.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
     background-color: transparent;
 }
 
-.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
     top: -6px;
     transform: rotate(-45deg);
 }
 
-/* Open Left */
-.openLeft {
-    label[for="navToggle"] {
+/* ==========================================================================
+   Open Left
+   ========================================================================== */
+.open-left {
+    label[for="nav-toggle"] {
         position: fixed;
         left: 15px;
         top: 15px;
@@ -192,29 +203,31 @@ label[for="navToggle"] .hamburger {
         z-index: 2;
     }
 
-    .navToggle + label, .openLeft .contentWrapper {
+    .nav-toggle + label, .open-left .content-wrapper {
         transition: all 0.2s ease-in-out;
     }
 
-    .navToggle + label.toggled {
+    .nav-toggle + label.toggled {
         left: 255px;
         transition: left 0.2s ease-in-out;
     }
 
-    .contentWrapper.open-sidebar {
+    .content-wrapper.open-sidebar {
         left: 240px;
         box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
         transition: left 0.2s ease-in-out;
     }
 
-    .overlayClear {
+    .overlay-clear {
         left: 240px;
     }
 }
 
-/* Open Right */
-.openRight {
-    label[for="navToggle"] {
+/* ==========================================================================
+   Open Right
+   ========================================================================== */
+.open-right {
+    label[for="nav-toggle"] {
         position: fixed;
         right: 15px;
         top: 15px;
@@ -222,34 +235,36 @@ label[for="navToggle"] .hamburger {
         z-index: 2;
     }
 
-    .navToggle + label, .openRight .contentWrapper {
+    .nav-toggle + label, .open-right .content-wrapper {
         transition: all 0.2s ease-in-out;
     }
 
-    .navToggle + label.toggled {
+    .nav-toggle + label.toggled {
         right: 82%;
         transition: right 0.2s ease-in-out;
     }
 
-    .contentWrapper.open-sidebar {
+    .content-wrapper.open-sidebar {
         left: -70%;
         box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
         transition: left 0.2s ease-in-out;
     }
 
-    .mobileMenu {
+    .omni-mobile-menu {
         left: 30%;
         transition: left 0.2s ease-in-out;
     }
 
-    .overlayClear {
+    .overlay-clear {
         left: -70%;
     }
 }
 
-/* Open Top */
-.openTop {
-    label[for="navToggle"] {
+/* ==========================================================================
+   Open Top
+   ========================================================================== */
+.open-top {
+    label[for="nav-toggle"] {
         position: fixed;
         right: 15px;
         top: 15px;
@@ -257,29 +272,28 @@ label[for="navToggle"] .hamburger {
         z-index: 2;
     }
 
-    .navToggle + label {
+    .nav-toggle + label {
         transition: top 0.2s ease-in-out;
     }
 
-    .contentWrapper {
+    .content-wrapper {
         transition: all 0.2s ease-in-out;
         top: 0;
         z-index: 1;
         position: absolute;
     }
 
-    .navToggle:checked + label {
+    .nav-toggle:checked + label {
         top: 0;
         transition: top 0.2s ease-in-out;
     }
 
-    .navToggle:checked ~ .contentWrapper {
+    .nav-toggle:checked ~ .content-wrapper {
       transition: all 0.2s ease-in-out;
-      // top: 30%;
       position: absolute;
     }
 
-    .mobileMenu {
+    .omni-mobile-menu {
         top: 0;
         transition: top 0.2s ease-in-out;
         position: relative;
@@ -291,11 +305,19 @@ label[for="navToggle"] .hamburger {
             width: 100%;
         }
     }
+
+    .body-overlay-clear {
+        .omni-mobile-menu {
+            z-index: 1;
+        }
+    }
 }
 
-/* Open Full */
-.openFull {
-    label[for="navToggle"] {
+/* ==========================================================================
+   Open Full
+   ========================================================================== */
+.open-full {
+    label[for="nav-toggle"] {
         position: fixed;
         right: 15px;
         top: 15px;
@@ -303,22 +325,22 @@ label[for="navToggle"] .hamburger {
         z-index: 2;
     }
 
-    .navToggle + label {
+    .nav-toggle + label {
         transition: top 0.2s ease-in-out;
     }
 
-    .contentWrapper {
+    .content-wrapper {
         transition: all 0.2s ease-in-out;
         opacity: 1;
         height: 100%;
     }
 
-    .navToggle:checked + label {
+    .nav-toggle:checked + label {
         top: 0;
         transition: top 0.2s ease-in-out;
     }
 
-    .navToggle:checked ~ .contentWrapper {
+    .nav-toggle:checked ~ .content-wrapper {
         box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
         transition: all 0.2s ease-in-out;
         opacity: 0;
@@ -327,7 +349,7 @@ label[for="navToggle"] .hamburger {
         z-index: -1;
     }
 
-    .mobileMenu {
+    .omni-mobile-menu {
         top: 0;
         transition: top 0.2s ease-in-out;
 
@@ -336,17 +358,20 @@ label[for="navToggle"] .hamburger {
         }
     }
 
-    .bodyOverlay {
+    .body-overlay {
         opacity: 1;
     }
 
-    .overlayClear {
+    .overlay-clear {
         opacity: 0;
     }
 }
 
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 @media screen and (max-width: 768px) {
-    .mobileMenu, .navToggle, label[for="navToggle"] {
+    .omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
         display: block;
     }
 }

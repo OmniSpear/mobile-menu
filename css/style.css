@@ -1,340 +1,311 @@
-/* contentWrapper Needs */
-.contentWrapper {
-    min-height: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    background-color: white;
-    position: relative;
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    z-index: 1;
-    transition: left 0.2s ease-in-out;
-    overflow-x: hidden;
+/* ==========================================================================
+   Body/Wrapper/Content
+   ========================================================================== */
+.content-wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  background-color: white;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  transition: left 0.2s ease-in-out;
+  overflow-x: hidden;
 }
-
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
-
+html,
 body {
-    /* Hides Horizontal Scroll */
-    overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
-
-.bodyOverlay {
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    transition: all 0.2s ease-in-out;
-    z-index: 1;
+body {
+  /* Hides Horizontal Scroll */
+  overflow-x: hidden;
 }
-
-.bodyOverlay.overlayClear {
-    transition: all 0.2s ease-in-out;
-    z-index: -1;
-}
-
-.content {
-    padding: 60px 40px;
-}
-
-/* Mobile Menu */
-.mobileMenu, .navToggle, label[for="navToggle"] {
-    display: none;
-}
-
-.mobileMenu {
-    width: 100%;
-    height: 100%;
-
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-
-    list-style: none;
-    background: #333;
-    padding-left: 0;
-    margin-top: 0;
-}
-
-.mobileMenu li {
-    width: 70%;
-    background-color: transparent;
-    z-index: 1;
-}
-
-.mobileMenu li a {
-    display: block;
-    padding: 20px;
-    background: transparent;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s, background 0.5s;
-    font-weight: normal;
-    font-size: 14px;
-    border-bottom: 1px solid #000;
-}
-
-.mobileMenu li ul li ul li a {
-    padding-left: 100px;
-}
-
-.mobileMenu li a:hover {
-    color: #c74438;
-}
-
-.swipe-area {
-    position: absolute;
-    width: 50px;
-    left: 0;
-    top: 0;
-    height: 100%;
-    // background: #f3f3f3;
-    z-index: 0;
-}
-
-.dropdown .dropdownMenu {
-    list-style: none;
-    color: white;
-    font-size: 12px;
-    padding-left: 0;
-    z-index: 1;
-    display: none;
-}
-
-.dropdownMenu li {
-    width: 100%;
-}
-
-.dropdownMenu li a {
-    display: block;
-    width: 100%;
-    padding-left: 50px; 
-}
-
-/* Toggle */
-.navToggle {
-    /* Hides Checkbox */
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-}
-
-label[for="navToggle"] .hamburger {
-    cursor: pointer;
-    padding: 9px 10px 11px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-color: #333;
-    border-radius: 5px;
-}
-
-.hamburger .icon-bar {
-    background-color: #fff;
-    display: block;
-    width: 28px;
-    height: 3px;
-    border-radius: 1px;
-    position: relative;
-    transition: all 0.4s;
-}
-
-.hamburger .icon-bar:not(:last-child) {
-    margin-bottom: 4px;
-}
-
-.hamburger .icon-bar:nth-of-type(2) {
-    top: 1px;
-}
-
-.hamburger .icon-bar:nth-of-type(3) {
-    top: 2px;
-}
-
-.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
-    top: 8px;
-    transform: rotate(45deg);
-}
-
-.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
-    background-color: transparent;
-}
-
-.navToggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
-    top: -6px;
-    transform: rotate(-45deg);
-}
-
-/* Open Left */
-.openLeft label[for="navToggle"] {
-    position: fixed;
-    left: 15px;
-    top: 15px;
-    right: auto;
-    z-index: 2;
-}
-
-.openLeft .navToggle + label, .openLeft .contentWrapper {
-    transition: all 0.2s ease-in-out;
-}
-
-.openLeft .navToggle + label.toggled {
-    left: 255px;
-    transition: left 0.2s ease-in-out;
-}
-
-.openLeft .contentWrapper.open-sidebar {
-    left: 240px;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-    transition: left 0.2s ease-in-out;
-}
-
-.openLeft .overlayClear {
-    left: 240px;
-}
-
-/* Open Right */
-.openRight label[for="navToggle"] {
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    left: auto;
-    z-index: 2;
-}
-
-.openRight .navToggle + label, .openRight .contentWrapper {
-    transition: all 0.2s ease-in-out;
-}
-
-.openRight .navToggle + label.toggled {
-    right: 82%;
-    transition: right 0.2s ease-in-out;
-}
-
-.openRight .contentWrapper.open-sidebar {
-    left: -70%;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-    transition: left 0.2s ease-in-out;
-}
-
-.openRight .mobileMenu {
-    left: 30%;
-    transition: left 0.2s ease-in-out;
-}
-
-.openRight .overlayClear {
-    left: -70%;
-}
-
-/* Open Top */
-.openTop label[for="navToggle"] {
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    left: auto;
-    z-index: 2;
-}
-
-.openTop .navToggle + label {
-    transition: top 0.2s ease-in-out;
-}
-
-.openTop .contentWrapper {
-    transition: all 0.2s ease-in-out;
-    top: 0;
-    z-index: 1;
-    position: absolute;
-}
-
-.openTop .navToggle:checked + label {
-    top: 0;
-    transition: top 0.2s ease-in-out;
-}
-
-.openTop .navToggle:checked ~ .contentWrapper {
+.body-overlay {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   transition: all 0.2s ease-in-out;
-  // top: 30%;
+  z-index: 1;
+}
+.body-overlay.overlay-clear {
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+.content {
+  padding: 60px 40px;
+}
+/* ==========================================================================
+   Mobile Menu
+   ========================================================================== */
+.omni-mobile-menu,
+.nav-toggle,
+label[for="nav-toggle"] {
+  display: none;
+}
+.omni-mobile-menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  background: #333;
+  padding-left: 0;
+  margin-top: 0;
+}
+.omni-mobile-menu li {
+  width: 70%;
+  background-color: transparent;
+  z-index: 1;
+}
+.omni-mobile-menu li a {
+  display: block;
+  padding: 20px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+  font-weight: normal;
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+}
+.omni-mobile-menu li a:hover {
+  color: #c74438;
+}
+.swipe-area {
+  position: absolute;
+  width: 50px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 0;
+}
+.dropdown .dropdown-menu {
+  list-style: none;
+  color: white;
+  font-size: 12px;
+  padding-left: 0;
+  z-index: 1;
+  display: none;
+}
+.dropdown .dropdown-menu li {
+  width: 100%;
+}
+.dropdown .dropdown-menu li a {
+  display: block;
+  width: 100%;
+  padding-left: 50px;
+}
+.dropdown .dropdown-menu li ul li a {
+  padding-left: 90px;
+}
+/* Toggle
+   ========================================================================== */
+.nav-toggle {
+  /* Hides Checkbox */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+label[for="nav-toggle"] .hamburger {
+  cursor: pointer;
+  padding: 9px 10px 11px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #333;
+  border-radius: 5px;
+}
+.hamburger .icon-bar {
+  background-color: #fff;
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 1px;
+  position: relative;
+  transition: all 0.4s;
+}
+.hamburger .icon-bar:not(:last-child) {
+  margin-bottom: 4px;
+}
+.hamburger .icon-bar:nth-of-type(2) {
+  top: 1px;
+}
+.hamburger .icon-bar:nth-of-type(3) {
+  top: 2px;
+}
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
+  top: 8px;
+  transform: rotate(45deg);
+}
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
+  background-color: transparent;
+}
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
+  top: -6px;
+  transform: rotate(-45deg);
+}
+/* ==========================================================================
+   Open Left
+   ========================================================================== */
+.open-left label[for="nav-toggle"] {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  right: auto;
+  z-index: 2;
+}
+.open-left .nav-toggle + label,
+.open-left .open-left .content-wrapper {
+  transition: all 0.2s ease-in-out;
+}
+.open-left .nav-toggle + label.toggled {
+  left: 255px;
+  transition: left 0.2s ease-in-out;
+}
+.open-left .content-wrapper.open-sidebar {
+  left: 240px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.2s ease-in-out;
+}
+.open-left .overlay-clear {
+  left: 240px;
+}
+/* ==========================================================================
+   Open Right
+   ========================================================================== */
+.open-right label[for="nav-toggle"] {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  left: auto;
+  z-index: 2;
+}
+.open-right .nav-toggle + label,
+.open-right .open-right .content-wrapper {
+  transition: all 0.2s ease-in-out;
+}
+.open-right .nav-toggle + label.toggled {
+  right: 82%;
+  transition: right 0.2s ease-in-out;
+}
+.open-right .content-wrapper.open-sidebar {
+  left: -70%;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.2s ease-in-out;
+}
+.open-right .omni-mobile-menu {
+  left: 30%;
+  transition: left 0.2s ease-in-out;
+}
+.open-right .overlay-clear {
+  left: -70%;
+}
+/* ==========================================================================
+   Open Top
+   ========================================================================== */
+.open-top label[for="nav-toggle"] {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  left: auto;
+  z-index: 2;
+}
+.open-top .nav-toggle + label {
+  transition: top 0.2s ease-in-out;
+}
+.open-top .content-wrapper {
+  transition: all 0.2s ease-in-out;
+  top: 0;
+  z-index: 1;
   position: absolute;
 }
-
-.openTop .mobileMenu {
-    top: 0;
-    transition: top 0.2s ease-in-out;
-    position: relative;
-    display: table;
-    z-index: 0;
-    height: auto;
+.open-top .nav-toggle:checked + label {
+  top: 0;
+  transition: top 0.2s ease-in-out;
 }
-
-.openTop .mobileMenu li {
-    width: 100%;
+.open-top .nav-toggle:checked ~ .content-wrapper {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
 }
-
-/* Open Full */
-.openFull label[for="navToggle"] {
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    left: auto;
-    z-index: 2;
+.open-top .omni-mobile-menu {
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  position: relative;
+  display: table;
+  z-index: 0;
+  height: auto;
 }
-
-.openFull .navToggle + label {
-    transition: top 0.2s ease-in-out;
+.open-top .omni-mobile-menu li {
+  width: 100%;
 }
-
-.openFull .contentWrapper {
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-    height: 100%;
+.open-top .body-overlay-clear .omni-mobile-menu {
+  z-index: 1;
 }
-
-.openFull .navToggle:checked + label {
-    top: 0;
-    transition: top 0.2s ease-in-out;
+/* ==========================================================================
+   Open Full
+   ========================================================================== */
+.open-full label[for="nav-toggle"] {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  left: auto;
+  z-index: 2;
 }
-
-.openFull .navToggle:checked ~ .contentWrapper {
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out;
-    opacity: 0;
-    overflow: hidden;
-    height: 0;
-    z-index: -1;
+.open-full .nav-toggle + label {
+  transition: top 0.2s ease-in-out;
 }
-
-.openFull .mobileMenu {
-    top: 0;
-    transition: top 0.2s ease-in-out;
+.open-full .content-wrapper {
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  height: 100%;
 }
-
-.openFull .mobileMenu li {
-    width: 100%;
+.open-full .nav-toggle:checked + label {
+  top: 0;
+  transition: top 0.2s ease-in-out;
 }
-
-.openFull .bodyOverlay {
-    opacity: 1;
+.open-full .nav-toggle:checked ~ .content-wrapper {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+  height: 0;
+  z-index: -1;
 }
-
-.openFull .overlayClear {
-    opacity: 0;
+.open-full .omni-mobile-menu {
+  top: 0;
+  transition: top 0.2s ease-in-out;
 }
-
+.open-full .omni-mobile-menu li {
+  width: 100%;
+}
+.open-full .body-overlay {
+  opacity: 1;
+}
+.open-full .overlay-clear {
+  opacity: 0;
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 @media screen and (max-width: 768px) {
-    .mobileMenu, .navToggle, label[for="navToggle"] {
-        display: block;
-    }
+  .omni-mobile-menu,
+  .nav-toggle,
+  label[for="nav-toggle"] {
+    display: block;
+  }
 }
