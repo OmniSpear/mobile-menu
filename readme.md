@@ -22,34 +22,37 @@ Add CSS to project in the `<head>` section.
 Include this markup in the header of your site. This is the basic content for the Menu, including a dropdown and the hamburger button. Be sure that all of your site content that you want to be pushed when the menu opens is included inside the `.content-wrapper` div.
 
 ```html
-    <ul class="omni-mobile-menu" id="omni-mobile-menu">
-        <li><a href="#">Home</a></li>
-        <li class="dropdown">
-            <a class="dropdown-toggle">Dropdown</a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Sub Item</a></li>
-                <li><a href="#">Another Sub Item</a></li>
-                <li><a href="#">Last Sub Item</a></li>
-            </ul>
-        </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>  
+    <body class="open-right">
+        <div class="body-overlay"></div>
+        <ul class="omni-mobile-menu" id="omni-mobile-menu">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle">Dropdown</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Sub Item</a></li>
+                    <li><a href="#">Another Sub Item</a></li>
+                    <li><a href="#">Last Sub Item</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>  
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" />  
-    
-    <label for="nav-toggle" class="toggle-btn" data-toggle=".toggle-btn" data-menu=".content-wrapper">
-        <div class="hamburger">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />  
+        
+        <label for="nav-toggle" class="toggle-btn" data-toggle=".toggle-btn" data-menu=".content-wrapper">
+            <div class="hamburger">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+        </label>   
+
+        <div class="content-wrapper">
+            <!--Place Site Content Here-->
         </div>
-    </label>   
-
-    <div class="content-wrapper">
-        <!--Place Site Content Here-->
-    </div>
+    </body>
 ```
 
 ## Change Opening Direction
