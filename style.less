@@ -96,6 +96,36 @@ body {
             }
         }
     }
+
+    /* Dropdowns */
+    .dropdown {
+        .dropdown-menu {
+            list-style: none;
+            color: white;
+            font-size: 12px;
+            padding-left: 0;
+            z-index: 1;
+            display: none;
+
+            li {
+                width: 100%;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding-left: 50px; 
+                }
+
+                ul {
+                    li {
+                        a {
+                            padding-left: 90px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .swipe-area {
@@ -105,35 +135,6 @@ body {
     top: 0;
     height: 100%;
     z-index: 0;
-}
-
-.dropdown {
-    .dropdown-menu {
-        list-style: none;
-        color: white;
-        font-size: 12px;
-        padding-left: 0;
-        z-index: 1;
-        display: none;
-
-        li {
-            width: 100%;
-
-            a {
-                display: block;
-                width: 100%;
-                padding-left: 50px; 
-            }
-
-            ul {
-                li {
-                    a {
-                        padding-left: 90px;
-                    }
-                }
-            }
-        }
-    }
 }
 
 /* Toggle

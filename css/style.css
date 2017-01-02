@@ -68,6 +68,7 @@ label[for="nav-toggle"] {
   background: #333;
   padding-left: 0;
   margin-top: 0;
+  /* Dropdowns */
 }
 .omni-mobile-menu li {
   width: 70%;
@@ -88,15 +89,7 @@ label[for="nav-toggle"] {
 .omni-mobile-menu li a:hover {
   color: #c74438;
 }
-.swipe-area {
-  position: absolute;
-  width: 50px;
-  left: 0;
-  top: 0;
-  height: 100%;
-  z-index: 0;
-}
-.dropdown .dropdown-menu {
+.omni-mobile-menu .dropdown .dropdown-menu {
   list-style: none;
   color: white;
   font-size: 12px;
@@ -104,16 +97,24 @@ label[for="nav-toggle"] {
   z-index: 1;
   display: none;
 }
-.dropdown .dropdown-menu li {
+.omni-mobile-menu .dropdown .dropdown-menu li {
   width: 100%;
 }
-.dropdown .dropdown-menu li a {
+.omni-mobile-menu .dropdown .dropdown-menu li a {
   display: block;
   width: 100%;
   padding-left: 50px;
 }
-.dropdown .dropdown-menu li ul li a {
+.omni-mobile-menu .dropdown .dropdown-menu li ul li a {
   padding-left: 90px;
+}
+.swipe-area {
+  position: absolute;
+  width: 50px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 0;
 }
 /* Toggle
    ========================================================================== */
