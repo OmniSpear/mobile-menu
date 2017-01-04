@@ -26,9 +26,9 @@ Include this markup in the header of your site. This is the basic content for th
         <div class="body-overlay"></div>
         <ul class="omni-mobile-menu" id="omni-mobile-menu">
             <li><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle">Dropdown</a>
-                <ul class="dropdown-menu">
+            <li class="omni-dropdown">
+                <a class="omni-dropdown-toggle">Dropdown</a>
+                <ul class="omni-dropdown-menu">
                     <li><a href="#">Sub Item</a></li>
                     <li><a href="#">Another Sub Item</a></li>
                     <li><a href="#">Last Sub Item</a></li>
