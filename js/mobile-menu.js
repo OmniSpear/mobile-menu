@@ -54,7 +54,7 @@ function toggleMenu () {
 }
 
 // Submenus
-$(".dropdown-toggle").click(function () {
+$(".omni-dropdown-toggle").click(function () {
     $dropdownToggle = $(this);
     $content = $dropdownToggle.next();
     $content.slideToggle(250, function () {
