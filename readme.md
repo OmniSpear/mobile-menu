@@ -2,6 +2,10 @@
 
 This project was built by [Omnispear](http://www.omnispear.com/).
 
+## Include Using npm
+
+`npm install mobile-menu`
+
 ## Include Basic Files
 
 Add necessary js files to project before the closing `</body>` tag. Be sure you have jQuery linked in your project as well.
