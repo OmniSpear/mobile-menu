@@ -58,6 +58,7 @@ label[for="nav-toggle"] {
 .omni-mobile-menu {
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
   position: fixed;
   top: 0;
   right: 0;
@@ -182,6 +183,7 @@ label[for="nav-toggle"] .hamburger {
   left: 240px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   transition: left 0.2s ease-in-out;
+  overflow: hidden;
 }
 .open-left .overlay-clear {
   left: 240px;
@@ -208,6 +210,8 @@ label[for="nav-toggle"] .hamburger {
   left: -70%;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   transition: left 0.2s ease-in-out;
+  overflow: hidden;
+  max-height: 100vh;
 }
 .open-right .omni-mobile-menu {
   left: 30%;
