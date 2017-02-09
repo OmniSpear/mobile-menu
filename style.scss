@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Body/Wrapper/Content
+   ========================================================================== */
+.content-wrapper {
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    background-color: white;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    transition: left 0.2s ease-in-out;
+    overflow-x: hidden;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    /* Hides Horizontal Scroll */
+    overflow-x: hidden;
+}
+
+.body-overlay {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+
+    &.overlay-clear {
+        transition: all 0.2s ease-in-out;
+        z-index: -1;
+    }
+}
+
+.content {
+    padding: 60px 40px;
+}
+
+/* ==========================================================================
+   Mobile Menu
+   ========================================================================== */
+.omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
+    display: none;
+}
+
+.omni-mobile-menu {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    list-style: none;
+    background: #333;
+    padding-left: 0;
+    margin-top: 0;
+
+    li {
+        width: 70%;
+        background-color: transparent;
+        z-index: 1;
+
+        a {
+            display: block;
+            padding: 20px;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s, background 0.5s;
+            font-weight: normal;
+            font-size: 14px;
+            border-bottom: 1px solid #000;
+
+            &:hover {
+                color: #c74438;
+            }
+        }
+    }
+
+    /* Dropdowns */
+    .omni-dropdown {
+        .omni-dropdown-menu {
+            list-style: none;
+            color: white;
+            font-size: 12px;
+            padding-left: 0;
+            z-index: 1;
+            display: none;
+
+            li {
+                width: 100%;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding-left: 50px; 
+                }
+
+                ul {
+                    li {
+                        a {
+                            padding-left: 90px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.swipe-area {
+    position: absolute;
+    width: 50px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Toggle
+   ========================================================================== */
+.nav-toggle {
+    /* Hides Checkbox */
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-toggle"] .hamburger {
+    cursor: pointer;
+    padding: 9px 10px 11px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.hamburger {
+    .icon-bar {
+        background-color: #fff;
+        display: block;
+        width: 28px;
+        height: 3px;
+        border-radius: 1px;
+        position: relative;
+        transition: all 0.4s;
+
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+
+        &:nth-of-type(2) {
+            top: 1px;
+        }
+
+        &:nth-of-type(3) {
+            top: 2px;
+        }
+    }
+}
+
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
+    top: 8px;
+    transform: rotate(45deg);
+}
+
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
+    background-color: transparent;
+}
+
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
+    top: -6px;
+    transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   Open Left
+   ========================================================================== */
+.open-left {
+    label[for="nav-toggle"] {
+        position: fixed;
+        left: 15px;
+        top: 15px;
+        right: auto;
+        z-index: 2;
+    }
+
+    .nav-toggle + label, .open-left .content-wrapper {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .nav-toggle + label.toggled {
+        left: 255px;
+        transition: left 0.2s ease-in-out;
+    }
+
+    .content-wrapper.open-sidebar {
+        left: 240px;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        transition: left 0.2s ease-in-out;
+        overflow: hidden;
+        max-height: 100vh;
+    }
+
+    .overlay-clear {
+        left: 240px;
+    }
+}
+
+/* ==========================================================================
+   Open Right
+   ========================================================================== */
+.open-right {
+    label[for="nav-toggle"] {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        left: auto;
+        z-index: 2;
+    }
+
+    .nav-toggle + label, .open-right .content-wrapper {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .nav-toggle + label.toggled {
+        right: 82%;
+        transition: right 0.2s ease-in-out;
+    }
+
+    .content-wrapper.open-sidebar {
+        left: -70%;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        transition: left 0.2s ease-in-out;
+        overflow: hidden;
+        max-height: 100vh;
+    }
+
+    .omni-mobile-menu {
+        left: 30%;
+        transition: left 0.2s ease-in-out;
+    }
+
+    .overlay-clear {
+        left: -70%;
+    }
+}
+
+/* ==========================================================================
+   Open Top
+   ========================================================================== */
+.open-top {
+    label[for="nav-toggle"] {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        left: auto;
+        z-index: 2;
+    }
+
+    .nav-toggle + label {
+        transition: top 0.2s ease-in-out;
+    }
+
+    .content-wrapper {
+        transition: all 0.2s ease-in-out;
+        top: 0;
+        z-index: 1;
+        position: absolute;
+    }
+
+    .nav-toggle:checked + label {
+        top: 0;
+        transition: top 0.2s ease-in-out;
+    }
+
+    .nav-toggle:checked ~ .content-wrapper {
+      transition: all 0.2s ease-in-out;
+      position: absolute;
+    }
+
+    .omni-mobile-menu {
+        top: 0;
+        transition: top 0.2s ease-in-out;
+        position: relative;
+        display: table;
+        z-index: 0;
+        height: auto;
+
+        li {
+            width: 100%;
+        }
+    }
+
+    .body-overlay-clear {
+        .omni-mobile-menu {
+            z-index: 1;
+        }
+    }
+}
+
+/* ==========================================================================
+   Open Full
+   ========================================================================== */
+.open-full {
+    label[for="nav-toggle"] {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        left: auto;
+        z-index: 2;
+    }
+
+    .nav-toggle + label {
+        transition: top 0.2s ease-in-out;
+    }
+
+    .content-wrapper {
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+        height: 100%;
+    }
+
+    .nav-toggle:checked + label {
+        top: 0;
+        transition: top 0.2s ease-in-out;
+    }
+
+    .nav-toggle:checked ~ .content-wrapper {
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+        overflow: hidden;
+        height: 0;
+        z-index: -1;
+    }
+
+    .omni-mobile-menu {
+        top: 0;
+        transition: top 0.2s ease-in-out;
+
+        li {
+            width: 100%;
+        }
+    }
+
+    .body-overlay {
+        opacity: 1;
+    }
+
+    .overlay-clear {
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
+        display: block;
+    }
+}
