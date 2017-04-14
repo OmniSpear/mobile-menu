@@ -46,11 +46,11 @@ Include this markup in the header of your site. This is the basic content for th
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />  
         
         <label for="nav-toggle" class="toggle-btn" data-toggle=".toggle-btn" data-menu=".content-wrapper">
-            <div class="hamburger">
+            <span class="hamburger">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </div>
+            </span>
         </label>   
 
         <div class="content-wrapper">
