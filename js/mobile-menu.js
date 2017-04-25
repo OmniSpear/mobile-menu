@@ -84,29 +84,31 @@ $(window).on('resize', function(){
 });
 
 // Swipe Functionality
-$(function() {
-    if (document.createEvent('TouchEvent')) {
-      $(".open-left .content-wrapper").swipe( { swipeStatus:leftSwipe, allowPageScroll:"vertical"} );
-      $(".open-right .content-wrapper").swipe( { swipeStatus:rightSwipe, allowPageScroll:"vertical"} );
-    }
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ $(function() {
+     if (document.createEvent('TouchEvent')) {
+       $(".open-left .content-wrapper").swipe( { swipeStatus:leftSwipe, allowPageScroll:"vertical"} );
+       $(".open-right .content-wrapper").swipe( { swipeStatus:rightSwipe, allowPageScroll:"vertical"} );
+     }
 
-    function leftSwipe(event, phase, direction, distance, duration, fingers)
-        {
-        if ($(this).hasClass("open-sidebar")) {
-            if (phase=="move" && direction =="left") {
-                 closeMenu();
-                 return false;
-            }
-        }
-    }
-
-    function rightSwipe(event, phase, direction, distance, duration, fingers)
-        {
-        if ($(this).hasClass("open-sidebar")) {
-            if (phase=="move" && direction =="right") {
+     function leftSwipe(event, phase, direction, distance, duration, fingers)
+         {
+         if ($(this).hasClass("open-sidebar")) {
+             if (phase=="move" && direction =="left") {
                   closeMenu();
                   return false;
-            }
-        }
-    }
-});
+             }
+         }
+     }
+
+     function rightSwipe(event, phase, direction, distance, duration, fingers)
+         {
+         if ($(this).hasClass("open-sidebar")) {
+             if (phase=="move" && direction =="right") {
+                   closeMenu();
+                   return false;
+             }
+         }
+     }
+ });
+}
