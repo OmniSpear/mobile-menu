@@ -24,6 +24,7 @@ function closeMenu () {
     $(".toggle-btn").removeClass("toggled");
     $(".content-wrapper").removeClass("open-sidebar");
     $(".body-overlay").removeClass("overlay-clear");
+    $(".omni-mobile-menu").removeClass("menu-open");
     document.querySelector('.content-wrapper').removeEventListener('click', toggleMenu);
 }
 
@@ -31,9 +32,11 @@ function toggleMenu () {
     var container = document.querySelector('.content-wrapper'),
         toggleBtn = document.querySelector('.toggle-btn'),
         bodyOverlay = document.querySelector('.body-overlay');
+        omniMenu = document.querySelector('.omni-mobile-menu');
     toggleBtn.classList.toggle('toggled');
     container.classList.toggle('open-sidebar');
     bodyOverlay.classList.toggle('overlay-clear');
+    omniMenu.classList.toggle('menu-open');
     container.removeEventListener('click', toggleMenu);
 
     if (container.classList.contains('open-sidebar')) {
