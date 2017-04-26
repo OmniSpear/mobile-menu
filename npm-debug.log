@@ -1,0 +1,114 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/7.5.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@4.1.2
+3 info using node@v7.5.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/tylerreed/Documents/Projects/omnimobilemenu',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/tylerreed/.npm/mobile-menu/1.4.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/tylerreed/.npm correctMkdir not in flight; initializing
+10 info lifecycle mobile-menu@1.4.0~prepublish: mobile-menu@1.4.0
+11 silly lifecycle mobile-menu@1.4.0~prepublish: no script for prepublish, continuing
+12 info lifecycle mobile-menu@1.4.0~prepare: mobile-menu@1.4.0
+13 silly lifecycle mobile-menu@1.4.0~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/Users/tylerreed/.npm/mobile-menu/1.4.0/package.tgz',
+14 verbose tar pack   '/Users/tylerreed/Documents/Projects/omnimobilemenu' ]
+15 verbose tarball /Users/tylerreed/.npm/mobile-menu/1.4.0/package.tgz
+16 verbose folder /Users/tylerreed/Documents/Projects/omnimobilemenu
+17 verbose addLocalTarball adding from inside cache /Users/tylerreed/.npm/mobile-menu/1.4.0/package.tgz
+18 verbose correctMkdir /Users/tylerreed/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd mobile-menu@1.4.0
+20 verbose afterAdd /Users/tylerreed/.npm/mobile-menu/1.4.0/package/package.json not in flight; writing
+21 verbose correctMkdir /Users/tylerreed/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /Users/tylerreed/.npm/mobile-menu/1.4.0/package/package.json written
+23 silly publish { name: 'mobile-menu',
+23 silly publish   version: '1.4.0',
+23 silly publish   description: 'Omnispear Mobile Menu',
+23 silly publish   main: 'js/mobile-menu.js',
+23 silly publish   style: 'style.scss',
+23 silly publish   sass: 'style.scss',
+23 silly publish   repository:
+23 silly publish    { type: 'git',
+23 silly publish      url: 'git+https://github.com/OmniSpear/mobile-menu.git' },
+23 silly publish   author: { name: 'Tyler Reed' },
+23 silly publish   license: 'MIT',
+23 silly publish   bugs: { url: 'https://github.com/OmniSpear/mobile-menu/issues' },
+23 silly publish   homepage: 'https://github.com/OmniSpear/mobile-menu#readme',
+23 silly publish   readme: '# Omnispear Mobile Menu\n\nThis project was built by [Omnispear](http://www.omnispear.com/).\n\n## Include Using npm\n\n`npm install mobile-menu`\n\n## Include Basic Files\n\nAdd necessary js files to project before the closing `</body>` tag. Be sure you have jQuery linked in your project as well.\n    \n```html\n<script src="js/mobile-menu.js"></script>\n<script src="js/jquery.touchSwipe.min.js"></script>\n```\n\nAdd CSS to project in the `<head>` section.\n\n```html\n<link rel="stylesheet" type="text/css" href="css/style.css">\n```\n\n## Basic Markup\n\nInclude this markup in the header of your site. This is the basic content for the Menu, including a dropdown and the hamburger button. Be sure that all of your site content that you want to be pushed when the menu opens is included inside the `.content-wrapper` div.\n\n```html\n    <body class="open-right">\n        <div class="body-overlay"></div>\n        <ul class="omni-mobile-menu" id="omni-mobile-menu">\n            <li><a href="#">Home</a></li>\n            <li class="omni-dropdown">\n                <a class="omni-dropdown-toggle">Dropdown</a>\n                <ul class="omni-dropdown-menu">\n                    <li><a href="#">Sub Item</a></li>\n                    <li><a href="#">Another Sub Item</a></li>\n                    <li><a href="#">Last Sub Item</a></li>\n                </ul>\n            </li>\n            <li><a href="#">About</a></li>\n            <li><a href="#">Blog</a></li>\n            <li><a href="#">Contact</a></li>\n        </ul>  \n\n        <input type="checkbox" id="nav-toggle" class="nav-toggle" />  \n        \n        <label for="nav-toggle" class="toggle-btn" data-toggle=".toggle-btn" data-menu=".content-wrapper">\n            <span class="hamburger">\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n            </span>\n        </label>   \n\n        <div class="content-wrapper">\n            <!--Place Site Content Here-->\n        </div>\n    </body>\n```\n\n## Change Opening Direction\n\nTo set the direction the menu opens from, apply a class to the `<body>` tag of your markup. The mobile menu currently supports:\n\n* Left - `.open-left`\n* Right - `.open-right`\n* Full - `.open-full`\n* Top -  `.open-top` ',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: 'ccf87c58c5e400e1e26eb2b968f9346a100ff11e',
+23 silly publish   _id: 'mobile-menu@1.4.0',
+23 silly publish   scripts: {},
+23 silly publish   _shasum: '923968aecc2021b725e3a1bbe8c0a53b0582b351',
+23 silly publish   _from: '.' }
+24 info lifecycle mobile-menu@1.4.0~prepublishOnly: mobile-menu@1.4.0
+25 silly lifecycle mobile-menu@1.4.0~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name mobile-menu
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'mobile-menu',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'mobile-menu',
+30 silly mapToRegistry   name: 'mobile-menu',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/mobile-menu
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /Users/tylerreed/.npm/mobile-menu/1.4.0/package.tgz
+34 verbose request uri https://registry.npmjs.org/mobile-menu
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 11:14:59 AM
+37 verbose request using bearer token for auth
+38 verbose request id 3eed05d39c719444
+39 http request PUT https://registry.npmjs.org/mobile-menu
+40 http 403 https://registry.npmjs.org/mobile-menu
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '95',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Wed, 26 Apr 2017 15:15:00 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-iad2625-IAD',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1493219699.356878,VS0,VE715',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating /Users/tylerreed/.npm/registry.npmjs.org/mobile-menu on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 1.4.0." : mobile-menu
+44 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:292:14)
+44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
+44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:192:7)
+44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:189:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid mobile-menu
+47 verbose cwd /Users/tylerreed/Documents/Projects/omnimobilemenu
+48 error Darwin 16.4.0
+49 error argv "/usr/local/Cellar/node/7.5.0/bin/node" "/usr/local/bin/npm" "publish"
+50 error node v7.5.0
+51 error npm  v4.1.2
+52 error code E403
+53 error "You cannot publish over the previously published version 1.4.0." : mobile-menu
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
