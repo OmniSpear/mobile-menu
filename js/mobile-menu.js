@@ -71,8 +71,12 @@ $(".omni-dropdown-toggle").click(function () {
 
 });
 
-// Close Menu on Links That Start With '#'
-$(".omni-mobile-menu a[href^='#']").click(function() {
+// Close Menu on Links With '#'
+$(".omni-mobile-menu a").click(function() {
+    if (this.href.indexOf('#') === -1) {
+       return;
+    }
+    
     toggleMenu();
 });
 
