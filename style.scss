@@ -1,49 +1,64 @@
-/* ==========================================================================
-   Body/Wrapper/Content
-   ========================================================================== */
-.content-wrapper {
-    min-height: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    background-color: white;
-    position: relative;
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    z-index: 1;
-    transition: left 0.2s ease-in-out;
-    overflow-x: hidden;
-}
+// Table of Contents
+    // 1. Variables
+    // 2. Globals
+    // 3. Content
+    // 4. Menu
+    // 5. Toggle
+    // 6. Open Left
+    // 7. Open Right
+    // 8. Open Top
+    // 9. Open Full
+    // 10. Media Queries
 
-html, body {
-    height: 100%;
-    width: 100%;
+// Variables
+$omni-blue: #025b85;
+$transition: 0.2s ease-in-out;
+
+// Globals
+html,
+body {
     font-family: sans-serif;
+    font-size: 16px;
+    height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    width: 100%;
 }
 
 body {
-    /* Hides Horizontal Scroll */
     overflow-x: hidden;
 }
 
-.body-overlay {
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    position: fixed;
-    top: 0;
-    right: 0;
+// Content
+.content-wrapper {
+    background-color: #fff;
+    bottom: 100%;
     left: 0;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    top: 0;
+    transition: left $transition;
+    z-index: 1;
+}
+
+.body-overlay {
+    background: #fff;
     bottom: 0;
-    transition: all 0.2s ease-in-out;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all $transition;
+    width: 100vw;
     z-index: 1;
 
     &.overlay-clear {
-        transition: all 0.2s ease-in-out;
+        transition: all $transition;
         z-index: -1;
     }
 }
@@ -52,120 +67,112 @@ body {
     padding: 60px 40px;
 }
 
-/* ==========================================================================
-   Mobile Menu
-   ========================================================================== */
-.omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
+// Menu
+.omni-mobile-menu,
+.nav-toggle,
+label[for="nav-toggle"] {
     display: none;
 }
 
 .omni-mobile-menu {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
+    background: $omni-blue;
     bottom: 0;
-    left: 0;
-    z-index: 0;
+    height: 100%;
     list-style: none;
-    background: #333;
-    padding-left: 0;
     margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
 
     &.menu-open {
         overflow-y: scroll;
     }
 
     li {
-        width: 70%;
         background-color: transparent;
+        width: 70%;
         z-index: 1;
+    }
+
+    a {
+        background: transparent;
+        border-bottom: 2px solid darken($omni-blue, 2%);
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 20px;
+        text-decoration: none;
+        transition: color 0.2s, background 0.5s;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.omni-dropdown-menu {
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    list-style: none;
+    padding-left: 0;
+    z-index: 1;
+
+    li {
+        width: 100%;
 
         a {
             display: block;
-            padding: 20px;
-            background: transparent;
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.2s, background 0.5s;
-            font-weight: normal;
-            font-size: 14px;
-            border-bottom: 1px solid #000;
-
-            &:hover {
-                color: #c74438;
-            }
+            padding-left: 50px; 
+            width: 100%;
         }
-    }
 
-    /* Dropdowns */
-    .omni-dropdown {
-        .omni-dropdown-menu {
-            list-style: none;
-            color: white;
-            font-size: 12px;
-            padding-left: 0;
-            z-index: 1;
-            display: none;
-
-            li {
-                width: 100%;
-
-                a {
-                    display: block;
-                    width: 100%;
-                    padding-left: 50px; 
-                }
-
-                ul {
-                    li {
-                        a {
-                            padding-left: 90px;
-                        }
-                    }
-                }
-            }
+        ul li a {
+            padding-left: 90px;
         }
     }
 }
 
 .swipe-area {
-    position: absolute;
-    width: 50px;
-    left: 0;
-    top: 0;
     height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
     z-index: 0;
 }
 
-/* Toggle
-   ========================================================================== */
+// Toggle
 .nav-toggle {
-    /* Hides Checkbox */
-    position: absolute;
+    // Hides Checkbox
     clip: rect(0, 0, 0, 0);
+    position: absolute;
 }
 
 label[for="nav-toggle"] .hamburger {
-    cursor: pointer;
-    padding: 9px 10px 11px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-color: #333;
+    background-color: $omni-blue;
     border-radius: 5px;
+    cursor: pointer;
     display: block;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding: 9px 10px 11px;
 }
 
 .hamburger {
     .icon-bar {
         background-color: #fff;
-        display: block;
-        width: 28px;
-        height: 3px;
         border-radius: 1px;
+        display: block;
+        height: 3px;
         position: relative;
         transition: all 0.4s;
+        width: 28px;
 
         &:not(:last-child) {
             margin-bottom: 4px;
@@ -195,33 +202,31 @@ label[for="nav-toggle"] .hamburger {
     transform: rotate(-45deg);
 }
 
-/* ==========================================================================
-   Open Left
-   ========================================================================== */
+// Open Left
 .open-left {
     label[for="nav-toggle"] {
-        position: fixed;
         left: 15px;
-        top: 15px;
+        position: fixed;
         right: auto;
+        top: 15px;
         z-index: 2;
     }
 
     .nav-toggle + label, .open-left .content-wrapper {
-        transition: all 0.2s ease-in-out;
+        transition: all $transition;
     }
 
     .nav-toggle + label.toggled {
         left: 255px;
-        transition: left 0.2s ease-in-out;
+        transition: left $transition;
     }
 
     .content-wrapper.open-sidebar {
-        left: 240px;
         box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-        transition: left 0.2s ease-in-out;
-        overflow: hidden;
+        left: 240px;
         max-height: 100vh;
+        overflow: hidden;
+        transition: left $transition;
     }
 
     .overlay-clear {
@@ -229,38 +234,36 @@ label[for="nav-toggle"] .hamburger {
     }
 }
 
-/* ==========================================================================
-   Open Right
-   ========================================================================== */
+// Open Right
 .open-right {
     label[for="nav-toggle"] {
+        left: auto;
         position: fixed;
         right: 15px;
         top: 15px;
-        left: auto;
         z-index: 2;
     }
 
     .nav-toggle + label, .open-right .content-wrapper {
-        transition: all 0.2s ease-in-out;
+        transition: all $transition;
     }
 
     .nav-toggle + label.toggled {
         right: 82%;
-        transition: right 0.2s ease-in-out;
+        transition: right $transition;
     }
 
     .content-wrapper.open-sidebar {
-        left: -70%;
         box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-        transition: left 0.2s ease-in-out;
-        overflow: hidden;
+        left: -70%;
         max-height: 100vh;
+        overflow: hidden;
+        transition: left $transition;
     }
 
     .omni-mobile-menu {
         left: 30%;
-        transition: left 0.2s ease-in-out;
+        transition: left $transition;
     }
 
     .overlay-clear {
@@ -268,46 +271,44 @@ label[for="nav-toggle"] .hamburger {
     }
 }
 
-/* ==========================================================================
-   Open Top
-   ========================================================================== */
+// Open Top
 .open-top {
     label[for="nav-toggle"] {
+        left: auto;
         position: fixed;
         right: 15px;
         top: 15px;
-        left: auto;
         z-index: 2;
     }
 
     .nav-toggle + label {
-        transition: top 0.2s ease-in-out;
+        transition: top $transition;
     }
 
     .content-wrapper {
-        transition: all 0.2s ease-in-out;
-        top: 0;
-        z-index: 1;
         position: absolute;
+        top: 0;
+        transition: all $transition;
+        z-index: 1;
     }
 
     .nav-toggle:checked + label {
         top: 0;
-        transition: top 0.2s ease-in-out;
+        transition: top $transition;
     }
 
     .nav-toggle:checked ~ .content-wrapper {
-      transition: all 0.2s ease-in-out;
-      position: absolute;
+        transition: all $transition;
+        position: absolute;
     }
 
     .omni-mobile-menu {
-        top: 0;
-        transition: top 0.2s ease-in-out;
-        position: relative;
         display: table;
-        z-index: 0;
         height: auto;
+        position: relative;
+        top: 0;
+        transition: top $transition;
+        z-index: 0;
 
         li {
             width: 100%;
@@ -321,45 +322,43 @@ label[for="nav-toggle"] .hamburger {
     }
 }
 
-/* ==========================================================================
-   Open Full
-   ========================================================================== */
+// Open Full
 .open-full {
     label[for="nav-toggle"] {
+        left: auto;
         position: fixed;
         right: 15px;
         top: 15px;
-        left: auto;
         z-index: 2;
     }
 
     .nav-toggle + label {
-        transition: top 0.2s ease-in-out;
+        transition: top $transition;
     }
 
     .content-wrapper {
-        transition: all 0.2s ease-in-out;
-        opacity: 1;
         height: 100%;
+        opacity: 1;
+        transition: all $transition;
     }
 
     .nav-toggle:checked + label {
         top: 0;
-        transition: top 0.2s ease-in-out;
+        transition: top $transition;
     }
 
     .nav-toggle:checked ~ .content-wrapper {
         box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
-        transition: all 0.2s ease-in-out;
+        height: 0;
         opacity: 0;
         overflow: hidden;
-        height: 0;
+        transition: all $transition;
         z-index: -1;
     }
 
     .omni-mobile-menu {
         top: 0;
-        transition: top 0.2s ease-in-out;
+        transition: top $transition;
 
         li {
             width: 100%;
@@ -375,11 +374,11 @@ label[for="nav-toggle"] .hamburger {
     }
 }
 
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+// Media Queries
 @media screen and (max-width: 768px) {
-    .omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
+    .omni-mobile-menu,
+    .nav-toggle,
+    label[for="nav-toggle"] {
         display: block;
     }
 }

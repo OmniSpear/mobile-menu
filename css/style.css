@@ -1,320 +1,365 @@
-/* ==========================================================================
-   Body/Wrapper/Content
-   ========================================================================== */
-.content-wrapper {
-  min-height: 100%;
-  min-width: 100%;
-  max-width: 100%;
-  background-color: white;
-  position: relative;
-  top: 0;
-  bottom: 100%;
-  left: 0;
-  z-index: 1;
-  transition: left 0.2s ease-in-out;
-  overflow-x: hidden;
-}
+/* Table of Contents
+    /* 1. Globals
+    /* 2. Content
+    /* 3. Menu
+    /* 4. Toggle
+    /* 5. Open Left
+    /* 6. Open Right
+    /* 7. Open Top
+    /* 8. Open Full
+    /* 9. Media Queries
+*/
+
+/* Globals */
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
 }
+
 body {
-  /* Hides Horizontal Scroll */
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
+
+/* Content */
+.content-wrapper {
+    background-color: #fff;
+    bottom: 100%;
+    left: 0;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    top: 0;
+    transition: left 0.2s ease-in-out;
+    z-index: 1;
+}
+
 .body-overlay {
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  transition: all 0.2s ease-in-out;
-  z-index: 1;
+    background: #fff;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+    width: 100vw;
+    z-index: 1;
 }
+
 .body-overlay.overlay-clear {
-  transition: all 0.2s ease-in-out;
-  z-index: -1;
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
 }
+
 .content {
-  padding: 60px 40px;
+    padding: 60px 40px;
 }
-/* ==========================================================================
-   Mobile Menu
-   ========================================================================== */
+
+/* Menu */
 .omni-mobile-menu,
 .nav-toggle,
 label[for="nav-toggle"] {
-  display: none;
+    display: none;
 }
+
 .omni-mobile-menu {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  list-style: none;
-  background: #333;
-  padding-left: 0;
-  margin-top: 0;
-  /* Dropdowns */
+    background: #025b85;
+    bottom: 0;
+    height: 100%;
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
 }
+
 .omni-mobile-menu.menu-open {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
+
 .omni-mobile-menu li {
-  width: 70%;
-  background-color: transparent;
-  z-index: 1;
+    background-color: transparent;
+    width: 70%;
+    z-index: 1;
 }
-.omni-mobile-menu li a {
-  display: block;
-  padding: 20px;
-  background: transparent;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s, background 0.5s;
-  font-weight: normal;
-  font-size: 14px;
-  border-bottom: 1px solid #000;
-}
-.omni-mobile-menu li a:hover {
-  color: #c74438;
-}
-.omni-mobile-menu .omni-dropdown .omni-dropdown-menu {
-  list-style: none;
-  color: white;
-  font-size: 12px;
-  padding-left: 0;
-  z-index: 1;
-  display: none;
-}
-.omni-mobile-menu .omni-dropdown .omni-dropdown-menu li {
-  width: 100%;
-}
-.omni-mobile-menu .omni-dropdown .omni-dropdown-menu li a {
-  display: block;
-  width: 100%;
-  padding-left: 50px;
-}
-.omni-mobile-menu .omni-dropdown .omni-dropdown-menu li ul li a {
-  padding-left: 90px;
-}
-.swipe-area {
-  position: absolute;
-  width: 50px;
-  left: 0;
-  top: 0;
-  height: 100%;
-  z-index: 0;
-}
-/* Toggle
-   ========================================================================== */
-.nav-toggle {
-  /* Hides Checkbox */
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-label[for="nav-toggle"] .hamburger {
-  cursor: pointer;
-  padding: 9px 10px 11px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: #333;
-  border-radius: 5px;
-  display: block;
-}
-.hamburger .icon-bar {
-  background-color: #fff;
-  display: block;
-  width: 28px;
-  height: 3px;
-  border-radius: 1px;
-  position: relative;
-  transition: all 0.4s;
-}
-.hamburger .icon-bar:not(:last-child) {
-  margin-bottom: 4px;
-}
-.hamburger .icon-bar:nth-of-type(2) {
-  top: 1px;
-}
-.hamburger .icon-bar:nth-of-type(3) {
-  top: 2px;
-}
-.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
-  top: 8px;
-  transform: rotate(45deg);
-}
-.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
-  background-color: transparent;
-}
-.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
-  top: -6px;
-  transform: rotate(-45deg);
-}
-/* ==========================================================================
-   Open Left
-   ========================================================================== */
-.open-left label[for="nav-toggle"] {
-  position: fixed;
-  left: 15px;
-  top: 15px;
-  right: auto;
-  z-index: 2;
-}
-.open-left .nav-toggle + label,
-.open-left .open-left .content-wrapper {
-  transition: all 0.2s ease-in-out;
-}
-.open-left .nav-toggle + label.toggled {
-  left: 255px;
-  transition: left 0.2s ease-in-out;
-}
-.open-left .content-wrapper.open-sidebar {
-  left: 240px;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-  transition: left 0.2s ease-in-out;
-  overflow: hidden;
-  max-height: 100vh;
-}
-.open-left .overlay-clear {
-  left: 240px;
-}
-/* ==========================================================================
-   Open Right
-   ========================================================================== */
-.open-right label[for="nav-toggle"] {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  left: auto;
-  z-index: 2;
-}
-.open-right .nav-toggle + label,
-.open-right .open-right .content-wrapper {
-  transition: all 0.2s ease-in-out;
-}
-.open-right .nav-toggle + label.toggled {
-  right: 82%;
-  transition: right 0.2s ease-in-out;
-}
-.open-right .content-wrapper.open-sidebar {
-  left: -70%;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-  transition: left 0.2s ease-in-out;
-  overflow: hidden;
-  max-height: 100vh;
-}
-.open-right .omni-mobile-menu {
-  left: 30%;
-  transition: left 0.2s ease-in-out;
-}
-.open-right .overlay-clear {
-  left: -70%;
-}
-/* ==========================================================================
-   Open Top
-   ========================================================================== */
-.open-top label[for="nav-toggle"] {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  left: auto;
-  z-index: 2;
-}
-.open-top .nav-toggle + label {
-  transition: top 0.2s ease-in-out;
-}
-.open-top .content-wrapper {
-  transition: all 0.2s ease-in-out;
-  top: 0;
-  z-index: 1;
-  position: absolute;
-}
-.open-top .nav-toggle:checked + label {
-  top: 0;
-  transition: top 0.2s ease-in-out;
-}
-.open-top .nav-toggle:checked ~ .content-wrapper {
-  transition: all 0.2s ease-in-out;
-  position: absolute;
-}
-.open-top .omni-mobile-menu {
-  top: 0;
-  transition: top 0.2s ease-in-out;
-  position: relative;
-  display: table;
-  z-index: 0;
-  height: auto;
-}
-.open-top .omni-mobile-menu li {
-  width: 100%;
-}
-.open-top .body-overlay-clear .omni-mobile-menu {
-  z-index: 1;
-}
-/* ==========================================================================
-   Open Full
-   ========================================================================== */
-.open-full label[for="nav-toggle"] {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  left: auto;
-  z-index: 2;
-}
-.open-full .nav-toggle + label {
-  transition: top 0.2s ease-in-out;
-}
-.open-full .content-wrapper {
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-  height: 100%;
-}
-.open-full .nav-toggle:checked + label {
-  top: 0;
-  transition: top 0.2s ease-in-out;
-}
-.open-full .nav-toggle:checked ~ .content-wrapper {
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-  opacity: 0;
-  overflow: hidden;
-  height: 0;
-  z-index: -1;
-}
-.open-full .omni-mobile-menu {
-  top: 0;
-  transition: top 0.2s ease-in-out;
-}
-.open-full .omni-mobile-menu li {
-  width: 100%;
-}
-.open-full .body-overlay {
-  opacity: 1;
-}
-.open-full .overlay-clear {
-  opacity: 0;
-}
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-  .omni-mobile-menu,
-  .nav-toggle,
-  label[for="nav-toggle"] {
+
+.omni-mobile-menu a {
+    background: transparent;
+    border-bottom: 2px solid #02547b;
+    color: #fff;
     display: block;
-  }
+    font-size: 14px;
+    font-weight: normal;
+    padding: 20px;
+    text-decoration: none;
+    transition: color 0.2s, background 0.5s;
+}
+
+.omni-mobile-menu a:hover {
+    color: #fff;
+}
+
+.omni-dropdown-menu {
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    list-style: none;
+    padding-left: 0;
+    z-index: 1;
+}
+
+.omni-dropdown-menu li {
+    width: 100%;
+}
+
+.omni-dropdown-menu li a {
+    display: block;
+    padding-left: 50px;
+    width: 100%;
+}
+
+.omni-dropdown-menu li ul li a {
+    padding-left: 90px;
+}
+
+.swipe-area {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    z-index: 0;
+}
+
+/* Toggle */
+.nav-toggle {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+label[for="nav-toggle"] .hamburger {
+    background-color: #025b85;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding: 9px 10px 11px;
+}
+
+.hamburger .icon-bar {
+    background-color: #fff;
+    border-radius: 1px;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: all 0.4s;
+    width: 28px;
+}
+
+.hamburger .icon-bar:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.hamburger .icon-bar:nth-of-type(2) {
+    top: 1px;
+}
+
+.hamburger .icon-bar:nth-of-type(3) {
+    top: 2px;
+}
+
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(1) {
+    top: 8px;
+    transform: rotate(45deg);
+}
+
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(2) {
+    background-color: transparent;
+}
+
+.nav-toggle + label.toggled .hamburger .icon-bar:nth-of-type(3) {
+    top: -6px;
+    transform: rotate(-45deg);
+}
+
+/* Open Left */
+.open-left label[for="nav-toggle"] {
+    left: 15px;
+    position: fixed;
+    right: auto;
+    top: 15px;
+    z-index: 2;
+}
+
+.open-left .nav-toggle + label, .open-left .open-left .content-wrapper {
+    transition: all 0.2s ease-in-out;
+}
+
+.open-left .nav-toggle + label.toggled {
+    left: 255px;
+    transition: left 0.2s ease-in-out;
+}
+
+.open-left .content-wrapper.open-sidebar {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    left: 240px;
+    max-height: 100vh;
+    overflow: hidden;
+    transition: left 0.2s ease-in-out;
+}
+
+.open-left .overlay-clear {
+    left: 240px;
+}
+
+/* Open Right */
+.open-right label[for="nav-toggle"] {
+    left: auto;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+}
+
+.open-right .nav-toggle + label, .open-right .open-right .content-wrapper {
+    transition: all 0.2s ease-in-out;
+}
+
+.open-right .nav-toggle + label.toggled {
+    right: 82%;
+    transition: right 0.2s ease-in-out;
+}
+
+.open-right .content-wrapper.open-sidebar {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    left: -70%;
+    max-height: 100vh;
+    overflow: hidden;
+    transition: left 0.2s ease-in-out;
+}
+
+.open-right .omni-mobile-menu {
+    left: 30%;
+    transition: left 0.2s ease-in-out;
+}
+
+.open-right .overlay-clear {
+    left: -70%;
+}
+
+/* Open Top */
+.open-top label[for="nav-toggle"] {
+    left: auto;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+}
+
+.open-top .nav-toggle + label {
+    transition: top 0.2s ease-in-out;
+}
+
+.open-top .content-wrapper {
+    position: absolute;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.open-top .nav-toggle:checked + label {
+    top: 0;
+    transition: top 0.2s ease-in-out;
+}
+
+.open-top .nav-toggle:checked ~ .content-wrapper {
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+}
+
+.open-top .omni-mobile-menu {
+    display: table;
+    height: auto;
+    position: relative;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    z-index: 0;
+}
+
+.open-top .omni-mobile-menu li {
+    width: 100%;
+}
+
+.open-top .body-overlay-clear .omni-mobile-menu {
+    z-index: 1;
+}
+
+/* Open Full */
+.open-full label[for="nav-toggle"] {
+    left: auto;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+}
+
+.open-full .nav-toggle + label {
+    transition: top 0.2s ease-in-out;
+}
+
+.open-full .content-wrapper {
+    height: 100%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.open-full .nav-toggle:checked + label {
+    top: 0;
+    transition: top 0.2s ease-in-out;
+}
+
+.open-full .nav-toggle:checked ~ .content-wrapper {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
+}
+
+.open-full .omni-mobile-menu {
+    top: 0;
+    transition: top 0.2s ease-in-out;
+}
+
+.open-full .omni-mobile-menu li {
+    width: 100%;
+}
+
+.open-full .body-overlay {
+    opacity: 1;
+}
+
+.open-full .overlay-clear {
+    opacity: 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .omni-mobile-menu, .nav-toggle, label[for="nav-toggle"] {
+        display: block;
+    }
 }

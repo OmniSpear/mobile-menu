@@ -28,6 +28,7 @@ Include this markup in the header of your site. This is the basic content for th
 ```html
     <body class="open-right">
         <div class="body-overlay"></div>
+
         <ul class="omni-mobile-menu" id="omni-mobile-menu">
             <li><a href="#">Home</a></li>
             <li class="omni-dropdown">
@@ -37,11 +38,11 @@ Include this markup in the header of your site. This is the basic content for th
                     <li><a href="#">Another Sub Item</a></li>
                     <li><a href="#">Last Sub Item</a></li>
                 </ul>
-            </li>
+            </li><!-- omni-dropdown -->
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact</a></li>
-        </ul>  
+        </ul><!-- omni-mobile-menu -->
 
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />  
         
@@ -55,7 +56,7 @@ Include this markup in the header of your site. This is the basic content for th
 
         <div class="content-wrapper">
             <!--Place Site Content Here-->
-        </div>
+        </div><!-- content-wrapper -->
     </body>
 ```
 

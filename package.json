@@ -1,9 +1,9 @@
 {
   "name": "mobile-menu",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "Omnispear Mobile Menu",
   "main": "js/mobile-menu.js",
-  "style": "style.scss",
+  "style": "style.css",
   "sass": "style.scss",
   "repository": {
     "type": "git",
