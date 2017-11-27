@@ -121,18 +121,18 @@ label[for="nav-toggle"] {
     box-sizing: unset;
     content: '';
     display: inline-block;
-    height: 6px;
+    height: 5px;
     left: 15px;
     position: relative;
-    top: 1px;
+    top: 4px;
     transition: transform 0.3s ease;
     transform: rotate(135deg);
     vertical-align: top;
-    width: 6px;
+    width: 5px;
 }
 
 .omni-dropdown-toggle.omni-menu-open:after {
-    top: 6px;
+    top: 8px;
     transition: transform 0.3s ease;
     transform: rotate(-45deg);
 }
