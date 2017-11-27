@@ -59,6 +59,7 @@ function toggleMenu () {
 // Submenus
 $(".omni-dropdown-toggle").click(function () {
     $dropdownToggle = $(this);
+    $dropdownToggle.toggleClass('omni-menu-open')
     $content = $dropdownToggle.next();
     $content.slideToggle(250, function () {
         if ($('body').hasClass('open-top')) {
@@ -76,7 +77,7 @@ $(".omni-mobile-menu a").click(function() {
     if (this.href.indexOf('#') === -1) {
        return;
     }
-    
+
     toggleMenu();
 });
 

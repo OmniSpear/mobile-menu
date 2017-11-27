@@ -111,6 +111,31 @@ label[for="nav-toggle"] {
     color: #fff;
 }
 
+.omni-dropdown-toggle {
+    cursor: pointer;
+}
+
+.omni-dropdown-toggle:after {
+    border-style: solid;
+    border-width: 3px 3px 0 0;
+    content: '';
+    display: inline-block;
+    height: 6px;
+    left: 15px;
+    position: relative;
+    top: 1px;
+    transition: transform 0.3s ease;
+    transform: rotate(135deg);
+    vertical-align: top;
+    width: 6px;
+}
+
+.omni-dropdown-toggle.omni-menu-open:after {
+    top: 6px;
+    transition: transform 0.3s ease;
+    transform: rotate(-45deg);
+}
+
 .omni-dropdown-menu {
     color: #fff;
     display: none;

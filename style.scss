@@ -1,14 +1,14 @@
 // Table of Contents
-    // 1. Variables
-    // 2. Globals
-    // 3. Content
-    // 4. Menu
-    // 5. Toggle
-    // 6. Open Left
-    // 7. Open Right
-    // 8. Open Top
-    // 9. Open Full
-    // 10. Media Queries
+// 1. Variables
+// 2. Globals
+// 3. Content
+// 4. Menu
+// 5. Toggle
+// 6. Open Left
+// 7. Open Right
+// 8. Open Top
+// 9. Open Full
+// 10. Media Queries
 
 // Variables
 $omni-blue: #025b85;
@@ -115,6 +115,31 @@ label[for="nav-toggle"] {
     }
 }
 
+.omni-dropdown-toggle {
+    cursor: pointer;
+
+    &:after {
+        border-style: solid;
+        border-width: 3px 3px 0 0;
+        content: '';
+        display: inline-block;
+        height: 6px;
+        left: 15px;
+        position: relative;
+        top: 1px;
+        transition: transform 0.3s ease;
+        transform: rotate(135deg);
+        vertical-align: top;
+        width: 6px;
+    }
+
+    &.omni-menu-open:after {
+        top: 6px;
+        transition: transform 0.3s ease;
+        transform: rotate(-45deg);
+    }
+}
+
 .omni-dropdown-menu {
     color: #fff;
     display: none;
@@ -128,7 +153,7 @@ label[for="nav-toggle"] {
 
         a {
             display: block;
-            padding-left: 50px; 
+            padding-left: 50px;
             width: 100%;
         }
 
