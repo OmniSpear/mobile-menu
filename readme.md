@@ -9,7 +9,7 @@ This project was built by [Omnispear](http://www.omnispear.com/).
 ## Include Basic Files
 
 Add necessary js files to project before the closing `</body>` tag. Be sure you have jQuery linked in your project as well.
-    
+
 ```html
 <script src="js/mobile-menu.js"></script>
 <script src="js/jquery.touchSwipe.min.js"></script>
@@ -29,7 +29,7 @@ Include this markup in the header of your site. This is the basic content for th
     <body class="open-right">
         <div class="body-overlay"></div>
 
-        <ul class="omni-mobile-menu" id="omni-mobile-menu">
+        <ul class="omni-mobile-menu">
             <li><a href="#">Home</a></li>
             <li class="omni-dropdown">
                 <a class="omni-dropdown-toggle">Dropdown</a>
@@ -44,15 +44,13 @@ Include this markup in the header of your site. This is the basic content for th
             <li><a href="#">Contact</a></li>
         </ul><!-- omni-mobile-menu -->
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />  
-        
-        <label for="nav-toggle" class="toggle-btn" data-toggle=".toggle-btn" data-menu=".content-wrapper">
+        <div class="toggle-btn">
             <span class="hamburger">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </span>
-        </label>   
+        </div>
 
         <div class="content-wrapper">
             <!--Place Site Content Here-->
@@ -67,4 +65,3 @@ To set the direction the menu opens from, apply a class to the `<body>` tag of y
 * Left - `.open-left`
 * Right - `.open-right`
 * Full - `.open-full`
-* Top -  `.open-top` 
