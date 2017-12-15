@@ -241,19 +241,19 @@ body {
 
     &.menu-open {
         .toggle-btn {
-            left: 255px;
+            left: calc(70% + 40px);
             transition: left 0.2s ease-in-out;
         }
 
         .content-wrapper {
             box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-            left: 240px;
+            left: 70%;
             overflow: hidden;
             transition: left 0.2s ease-in-out;
         }
 
         .body-overlay {
-            left: 240px;
+            left: 70%;
         }
     }
 }
@@ -280,7 +280,7 @@ body {
 
     &.menu-open {
         .toggle-btn {
-            right: 82%;
+            right: calc(70% + 40px);
             transition: right 0.2s ease-in-out;
         }
 
@@ -350,7 +350,8 @@ body {
 
 // Media Queries
 @media screen and (max-width: 768px) {
-    .omni-mobile-menu, .toggle-btn {
+    .omni-mobile-menu,
+    .toggle-btn {
         display: block;
     }
 }
