@@ -29,6 +29,10 @@ body.menu-open {
     overflow: hidden;
 }
 
+html.no-scroll {
+    overflow-y: hidden;
+}
+
 /* Content */
 .content-wrapper {
     background-color: #fff;

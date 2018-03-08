@@ -6,6 +6,7 @@ function stopScroll (event) {
 
 function toggleMenu () {
     document.body.classList.toggle('menu-open');
+    $('html').toggleClass('no-scroll');
     document.body.removeEventListener('touchmove', stopScroll);
 
     if (document.body.classList.contains('menu-open')) {
@@ -17,6 +18,7 @@ function closeMenu () {
     if (document.body.classList.contains('menu-open')) {
         document.body.removeEventListener('touchmove', stopScroll);
         document.body.classList.remove('menu-open');
+        $('html').removeClass('no-scroll');
     }
 }
 
