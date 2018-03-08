@@ -33,6 +33,12 @@ body {
     }
 }
 
+html {
+    &.no-scroll {
+        overflow-y: hidden;
+    }
+}
+
 // Content
 .content-wrapper {
     background-color: #fff;
