@@ -14,9 +14,13 @@ function toggleMenu () {
 }
 
 function closeMenu () {
-    document.body.removeEventListener('touchmove', stopScroll);
-    document.body.classList.remove('menu-open');
+    if (document.body.classList.contains('menu-open')) {
+        document.body.removeEventListener('touchmove', stopScroll);
+        document.body.classList.remove('menu-open');
+    }
 }
+
+$('.body-overlay').on('touchmove', closeMenu);
 
 $('.omni-mobile-menu').on('touchmove', function (event) { event.stopPropagation(); });
 
@@ -51,8 +55,8 @@ $(window).on('resize', function () {
     }
 });
 
-// Swipe Functionality
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Swipe Functionality
     $(function () {
         if (document.createEvent('TouchEvent')) {
             $('.open-left').swipe( { swipeStatus:leftSwipe, allowPageScroll:'vertical'} );
