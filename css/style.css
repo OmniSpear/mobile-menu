@@ -340,6 +340,7 @@ html.no-scroll {
 
 .open-full.menu-open .body-overlay {
     opacity: 0;
+    z-index: 0;
 }
 
 /* Media Queries */
