@@ -115,6 +115,12 @@ html.no-scroll {
     transition: color 0.2s, background 0.5s;
 }
 
+.omni-mobile-menu a:not([href]):not([tabindex]),
+.omni-mobile-menu a:not([href]):not([tabindex]):hover,
+.omni-mobile-menu a:not([href]):not([tabindex]):focus {
+    color: #fff;
+}
+
 .omni-mobile-menu a:hover {
     color: #fff;
 }

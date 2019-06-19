@@ -113,7 +113,10 @@ html {
         text-decoration: none;
         transition: color 0.2s, background 0.5s;
 
-        &:hover {
+        &:hover,
+        &:not([href]):not([tabindex]),
+        &:not([href]):not([tabindex]):hover,
+        &:not([href]):not([tabindex]):focus {
             color: #fff;
         }
     }
