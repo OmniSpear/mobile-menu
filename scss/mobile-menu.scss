@@ -298,9 +298,13 @@ body {
 
         &.menu-open {
             .content-wrapper {
-                opacity: 0;
+                opacity: 1;
                 transition: all $omm-transition-duration ease-in-out, z-index 0s ease $omm-transition-duration;
                 z-index: -1;
+            }
+
+            .omni-mobile-menu {
+                transition: opacity $omm-transition-duration ease;
             }
         }
     } @else {
