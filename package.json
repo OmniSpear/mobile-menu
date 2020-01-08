@@ -1,15 +1,24 @@
 {
   "name": "mobile-menu",
-  "version": "2.0.9",
+  "version": "3.0.0",
   "description": "Omnispear Mobile Menu",
   "main": "js/mobile-menu.js",
-  "style": "style.css",
-  "sass": "style.scss",
+  "style": "mobile-menu.css",
+  "sass": "mobile-menu.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OmniSpear/mobile-menu.git"
   },
-  "author": "Tyler Reed",
+  "authors": [
+    {
+      "name": "Tyler Reed",
+      "email": "treed@omnispear.com"
+    },
+    {
+      "name": "Ryan Harris",
+      "email": "rharris@omnispear.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/OmniSpear/mobile-menu/issues"

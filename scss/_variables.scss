@@ -1,0 +1,56 @@
+// Toggle Button
+// This controls the button that opens and closes the menu
+//* Colors
+$omm-button-icon-color: #fff !default;
+$omm-button-bg-color: #025b85 !default;
+$omm-button-icon-color-hover: "" !default;
+$omm-button-bg-color-hover: "" !default;
+$omm-button-icon-color-open: "" !default;
+$omm-button-bg-color-open: "" !default;
+//* Size
+$omm-button-size: 40px !default; // width and height are the same
+$omm-button-padding: 0 !default;
+//* Other
+$omm-button-radius: 5px !default;
+$omm-button-position: absolute !default; // absolute, fixed
+$omm-button-position-top: 15px !default;
+$omm-button-position-right: 15px !default;
+$omm-button-position-bottom: "" !default;
+$omm-button-position-left: "" !default;
+
+// Menu
+// This controls the menus appearance when open
+$omm-body-bg-color: #fff !default;
+$omm-menu-bg-color: #025B85 !default;
+$omm-transition-duration: 0.5s !default;
+$omm-show-breakpoint: 768px !default;
+$omm-menu-direction: right !default; // left, right, full
+$omm-menu-width: 70vw !default; // for left and right directions only
+$omm-content-selectable: false !default; // selectable content while menu is open
+
+// Links
+// This controls the individual links inside the menu
+//* Colors
+$omm-link-color: #fff !default;
+$omm-link-bg-color: transparent !default;
+$omm-link-border-color: "" !default; // if empty, darkens menu-bg-color
+$omm-link-color-hover: "" !default;
+$omm-link-bg-color-hover: "" !default;
+//* Size
+$omm-link-font-size: 14px !default;
+$omm-link-padding-top-bottom: 20px !default;
+$omm-link-padding-left-right: 20px !default;
+$omm-link-weight: normal !default;
+$omm-border-size: 2px !default;
+//* Other
+$omm-text-alignment: "" !default;
+$omm-text-transform: "" !default;
+
+// Menu Full only options
+$omm-use-menu-full-styles: true !default; // Only takes effect if menu-direction is set to full
+$omm-menu-full-padding: 110px 30px 30px !default;
+$omm-menu-full-text-alignment: center !default;
+$omm-menu-full-text-transform: uppercase !default;
+$omm-menu-full-font-size: 40px !default;
+$omm-menu-full-link-weight: 700 !default;
+$omm-menu-full-link-margin-bottom: 35px !default;
