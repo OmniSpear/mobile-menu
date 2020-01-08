@@ -95,13 +95,12 @@
         left: 5px;
         position: relative;
         top: 0;
-        transition: all $omm-transition-duration ease;
+        transition: transform $omm-transition-duration ease, top $omm-transition-duration ease;
     }
 
     &.omni-menu-open:after {
         top: 2px;
         transform: rotate(-180deg);
-        transition: all $omm-transition-duration ease;
     }
 }
 
