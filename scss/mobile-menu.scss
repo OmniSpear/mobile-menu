@@ -19,6 +19,7 @@
 .content-wrapper {
     background-color: $omm-body-bg-color;
     left: 0;
+    min-height: 100vh;
     position: relative;
     transition: all $omm-transition-duration ease;
     z-index: 1;
@@ -90,7 +91,7 @@
     cursor: pointer;
 
     &:after {
-        content: "\25BE";
+        content: "\25be";
         display: inline-block;
         left: 5px;
         position: relative;
@@ -125,8 +126,12 @@
 
 // Toggle
 .toggle-btn {
+    align-items: center;
     @if $omm-button-position-bottom != "" {
         bottom: $omm-button-position-bottom;
+    }
+    @if $omm-text-position == "bottom" {
+        flex-direction: column;
     }
     cursor: pointer;
     @if $omm-button-position-left != "" {
@@ -142,10 +147,35 @@
     transition: all $omm-transition-duration ease;
     z-index: 2;
 
+    @if $omm-text-content != "" {
+        &:after {
+            content: "#{$omm-text-content}";
+            display: inline-block;
+            color: $omm-text-color;
+            font-size: $omm-text-size;
+            font-weight: $omm-text-weight;
+            @if $omm-text-position == "left" {
+                margin-right: $omm-text-spacing;
+            }
+            @if $omm-text-position == "right" {
+                margin-left: $omm-text-spacing;
+            }
+            @if $omm-text-position == "bottom" {
+                margin-top: $omm-text-spacing;
+            }
+            @if $omm-text-transform != "" {
+                text-transform: $omm-text-transform;
+            }
+        }
+    }
+
     .hamburger-icon {
         background-color: $omm-button-bg-color;
         border-radius: $omm-button-radius;
         height: $omm-button-size;
+        @if $omm-text-position == "left" {
+            order: 1;
+        }
         padding: $omm-button-padding;
         transition: all $omm-transition-duration ease;
         width: $omm-button-size;
@@ -224,7 +254,9 @@ body {
             }
 
             .content-wrapper {
-                box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+                @if $omm-box-shadow != "" {
+                    box-shadow: $omm-box-shadow;
+                }
                 left: $omm-menu-width;
                 overflow: hidden;
             }
@@ -361,9 +393,12 @@ body {
 // Media Queries
 @if $omm-show-breakpoint != "" {
     @media screen and (max-width: $omm-show-breakpoint) {
-        .omni-mobile-menu,
-        .toggle-btn {
+        .omni-mobile-menu {
             display: block;
+        }
+
+        .toggle-btn {
+            display: flex;
         }
     }
 }

@@ -10,6 +10,14 @@ $omm-button-bg-color-open: "" !default;
 //* Size
 $omm-button-size: 40px !default; // width and height are the same
 $omm-button-padding: 0 !default;
+//* Text
+$omm-text-content: "" !default;
+$omm-text-position: right !default; // left, right, bottom
+$omm-text-size: inherit !default; // font size value
+$omm-text-color: inherit !default;
+$omm-text-weight: inherit !default; // font weight value
+$omm-text-spacing: 10px !default; // margin between text and icon
+$omm-text-transform: "" !default; // text transform value
 //* Other
 $omm-button-radius: 5px !default;
 $omm-button-position: absolute !default; // absolute, fixed
@@ -21,12 +29,13 @@ $omm-button-position-left: "" !default;
 // Menu
 // This controls the menus appearance when open
 $omm-body-bg-color: #fff !default;
-$omm-menu-bg-color: #025B85 !default;
+$omm-menu-bg-color: #025b85 !default;
 $omm-transition-duration: 0.5s !default;
 $omm-show-breakpoint: 768px !default;
 $omm-menu-direction: right !default; // left, right, full
 $omm-menu-width: 70vw !default; // for left and right directions only
 $omm-content-selectable: false !default; // selectable content while menu is open
+$omm-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2) !default; // open menu shadow on content wrapper
 
 // Links
 // This controls the individual links inside the menu

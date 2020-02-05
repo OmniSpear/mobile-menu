@@ -2,6 +2,7 @@
 .content-wrapper {
   background-color: #fff;
   left: 0;
+  min-height: 100vh;
   position: relative;
   transition: all 0.5s ease;
   z-index: 1;
@@ -13,7 +14,7 @@
 }
 
 .omni-mobile-menu {
-  background-color: #025B85;
+  background-color: #025b85;
   bottom: 0;
   height: 100vh;
   left: 0;
@@ -76,6 +77,7 @@
 }
 
 .toggle-btn {
+  align-items: center;
   cursor: pointer;
   position: absolute;
   right: 15px;
@@ -157,9 +159,12 @@ body.menu-open .content-wrapper {
 }
 
 @media screen and (max-width: 768px) {
-  .omni-mobile-menu,
-.toggle-btn {
+  .omni-mobile-menu {
     display: block;
+  }
+
+  .toggle-btn {
+    display: flex;
   }
 }
 
