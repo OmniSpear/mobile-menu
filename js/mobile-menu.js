@@ -23,7 +23,6 @@ function closeMenu () {
 }
 
 $('.body-overlay').on('touchmove', closeMenu);
-
 $('.omni-mobile-menu').on('touchmove', function (event) { event.stopPropagation(); });
 
 // Submenus
@@ -43,8 +42,10 @@ $('.omni-mobile-menu a').click(function () {
     closeMenu();
 });
 
+// Toggle the menu
 $('.toggle-btn').click(toggleMenu);
 
-// $(window).on('resize', function () {
-//     closeMenu();
-// });
+// Close menu on resize
+$(window).on('resize', function () {
+    closeMenu();
+});
