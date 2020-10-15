@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.d-none {
+  display: none;
+}
+
 .content-wrapper {
   background-color: #fff;
   left: 0;
@@ -62,9 +66,16 @@
 }
 
 .omni-dropdown-menu {
-  display: none;
   list-style: none;
+  max-height: 600px;
+  opacity: 1;
+  overflow-y: auto;
   padding-left: 0;
+  transition: all 0.4s ease;
+}
+.omni-dropdown-menu.menu-collapsed {
+  max-height: 0;
+  opacity: 0;
 }
 .omni-dropdown-menu li a,
 .omni-dropdown-menu li .omni-dropdown-toggle {

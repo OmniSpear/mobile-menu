@@ -8,7 +8,7 @@ This project was built by [Omnispear](http://www.omnispear.com/).
 
 ## Include Basic Files
 
-Add necessary js files to project before the closing `</body>` tag. Be sure you have jQuery linked in your project as well.
+Add necessary js files to project before the closing `</body>` tag.
 
 ```html
 <script src="js/mobile-menu.js"></script>

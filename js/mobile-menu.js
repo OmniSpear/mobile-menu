@@ -4,48 +4,57 @@ function stopScroll (event) {
     return false;
 }
 
-function toggleMenu () {
-    document.body.classList.toggle('menu-open');
-    document.body.removeEventListener('touchmove', stopScroll);
-    document.getElementById('hamburger').classList.toggle('active');
+const body = document.body;
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.querySelector('.omni-mobile-menu');
+const menuLinks = document.querySelectorAll('.omni-mobile-menu a');
+const dropdownToggles = document.querySelectorAll('.omni-dropdown-toggle');
+const toggleBtn = document.querySelector('.toggle-btn');
 
-    if (document.body.classList.contains('menu-open')) {
-        document.body.addEventListener('touchmove', stopScroll);
+function toggleMenu () {
+    body.classList.toggle('menu-open');
+    body.removeEventListener('touchmove', stopScroll);
+    hamburger.classList.toggle('active');
+
+    if (body.classList.contains('menu-open')) {
+        body.addEventListener('touchmove', stopScroll);
     }
 }
 
 function closeMenu () {
-    if (document.body.classList.contains('menu-open')) {
-        document.body.removeEventListener('touchmove', stopScroll);
-        document.body.classList.remove('menu-open');
-        document.getElementById('hamburger').classList.remove('active');
+    if (body.classList.contains('menu-open')) {
+        body.removeEventListener('touchmove', stopScroll);
+        body.classList.remove('menu-open');
+        hamburger.classList.remove('active');
     }
 }
 
-$('.body-overlay').on('touchmove', closeMenu);
-$('.omni-mobile-menu').on('touchmove', function (event) { event.stopPropagation(); });
+mobileMenu.addEventListener('touchmove', function (event) {
+    event.stopPropagation();
+});
 
 // Submenus
-$('.omni-dropdown-toggle').click(function () {
-    var $dropdownToggle = $(this);
-    $dropdownToggle.toggleClass('omni-menu-open');
-    $content = $dropdownToggle.next();
-    $content.slideToggle(250);
-});
+for (let i = 0; i < dropdownToggles.length; i++) {
+    dropdownToggles[i].addEventListener('click', function () {
+        let toggle = this;
+        let menu = this.nextElementSibling;
+        toggle.classList.toggle('omni-menu-open');
+        menu.classList.toggle('menu-collapsed');
+    });
+}
 
 // Close Menu on Links With '#'
-$('.omni-mobile-menu a').click(function () {
-    if (this.href.indexOf('#') === -1) {
-        return;
-    }
-
-    closeMenu();
-});
+for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', function () {
+        if (this.href.indexOf('#') === -1) {
+            return;
+        }
+        closeMenu();
+    });
+}
 
 // Toggle the menu
-$('.toggle-btn').click(toggleMenu);
+toggleBtn.addEventListener('click', toggleMenu);
 
 // Close menu on resize
-$(window).on('resize', function () {
-    closeMenu();
-});
+window.addEventListener('resize', closeMenu);
