@@ -29,9 +29,11 @@ function closeMenu () {
     }
 }
 
-mobileMenu.addEventListener('touchmove', function (event) {
-    event.stopPropagation();
-});
+if (mobileMenu !== null) {
+    mobileMenu.addEventListener('touchmove', function (event) {
+        event.stopPropagation();
+    });
+}
 
 // Submenus
 for (let i = 0; i < dropdownToggles.length; i++) {
@@ -54,7 +56,9 @@ for (let i = 0; i < menuLinks.length; i++) {
 }
 
 // Toggle the menu
-toggleBtn.addEventListener('click', toggleMenu);
+if (toggleBtn !== null) {
+    toggleBtn.addEventListener('click', toggleMenu);
+}
 
 // Close menu on resize
 window.addEventListener('resize', closeMenu);
